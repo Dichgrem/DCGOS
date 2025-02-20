@@ -1,0 +1,26 @@
+__build_info:
+  rime_version: 1.12.0
+  timestamps:
+    default: 0
+    default.custom: 1723298837
+    key_bindings: 0
+    key_bindings.custom: 0
+    punctuation: 0
+    punctuation.custom: 0
+    yustar_chaifen.custom: 0
+    yustar_chaifen.schema: 1723298837
+menu:
+  page_size: 5
+schema:
+  author:
+    - "發明人 朱宇浩"
+  description: |
+    輔助方案，不能打字。
+    配合 lua_filter 實現三重註解功能。
+
+  name: "宇浩·星陳·拆分表·大陸字形"
+  schema_id: yustar_chaifen
+  version: 20231001
+translator:
+  dictionary: yustar_chaifen
+  enable_user_dict: false
