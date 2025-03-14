@@ -1,0 +1,67 @@
+touchpad:
+  speed:
+    swipe_threshold: 45
+  gestures:
+    - type: swipe
+      fingers: 3
+      direction: down
+      actions:
+        - on: begin
+          plasma_shortcut: kwin,Window Maximize
+          block_other: true # Prevent the minimize window action from triggering during the same gesture
+          conditions:
+            - window_state: [ maximized ]
+        # Minimize window if not fullscreen and not maximized
+        - on: begin
+          plasma_shortcut: kwin,Window Minimize
+          conditions:
+          - negate: [ window_state ]
+            window_state: [ fullscreen, maximized ]
+        - on: begin
+          plasma_shortcut: kwin,Window Fullscreen
+          conditions:
+            - window_state: [ fullscreen ]
+
+    # Maximize
+    - type: swipe
+      fingers: 3
+      direction: up
+      actions:
+        # Maximize window if not already maximized
+        - on: begin
+          plasma_shortcut: kwin,Window Maximize
+          conditions:
+            - negate: [ window_state ]
+              window_state: [ maximized ]
+        # Fullscreen window if already maximized
+        - on: begin
+          plasma_shortcut: kwin,Window Fullscreen
+          conditions:
+            - window_state: [ maximized, fullscreen ]
+
+    - type: pinch
+      fingers: 3
+      direction: in
+      actions:
+        - on: begin
+          plasma_shortcut: kwin,Window Close
+
+    # Window switching
+    - type: swipe
+      direction: left_right
+      fingers: 3
+
+      actions:
+        - on: begin
+          keyboard: [ +leftalt, tab ]
+
+        - on: update
+          interval: -120
+          keyboard: [ leftshift+tab ]
+
+        - on: update
+          interval: 120
+          keyboard: [ tab ]
+
+        - on: end_cancel
+          keyboard: [ -leftalt ]
