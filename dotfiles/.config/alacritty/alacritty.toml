@@ -19,12 +19,13 @@ size = 12
 family = "monospace"
 style = "Regular"
 
-[terminal.shell]
-program = "/usr/bin/nu"
+[terminal]
+shell = { program = "/usr/bin/bash", args = ["-c", "fastfetch; exec $SHELL"] }
 
 [window]
 decorations = "full"
 dynamic_padding = true
 title = "Alacritty"
 
-[terminal]
+
+
