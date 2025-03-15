@@ -20,7 +20,7 @@ family = "monospace"
 style = "Regular"
 
 [terminal]
-shell = { program = "/usr/bin/bash", args = ["-c", "fastfetch; exec $SHELL"] }
+shell = { program = "/usr/bin/bash", args = ["-c", "fastfetch; exec nu"] }
 
 [window]
 decorations = "full"
