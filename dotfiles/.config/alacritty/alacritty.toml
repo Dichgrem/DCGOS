@@ -16,8 +16,8 @@ foreground = "0xD8DEE9"
 size = 12
 
 [font.normal]
-family = "monospace"
-style = "Regular"
+family = "MapleMono"
+style = "Bold"
 
 [terminal]
 shell = { program = "/usr/bin/bash", args = ["-c", "fastfetch; exec nu"] }
