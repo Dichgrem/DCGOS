@@ -12,19 +12,16 @@ map("n", "<C-S-Tab>", "<cmd>bprevious<CR>", { desc = "Previous buffer (like VSCo
 -- === Close buffer like Ctrl + W in VSCode ===
 vim.keymap.set("n", "<C-w>", "<cmd>BufferLinePickClose<CR>", { desc = "Close buffer (BufferLine)" })
 
--- === Switch to buffer by number: Ctrl + 1~9 ===
-for i = 1, 9 do
-    map("n", "<C-" .. i .. ">", function()
-    vim.cmd(i .. "b")
-    end, { desc = "Go to buffer " .. i })
-    end
+vim.keymap.set("n", "<C-S-5>", function()
+if vim.bo.buftype == "terminal" then
+    vim.cmd("vsplit | terminal")
+    else
+        vim.cmd("botright split | terminal")
+        end
+        end, { desc = "Split terminal" })
 
-    -- === Fuzzy find files (like Ctrl + P in VSCode) ===
-    map("n", "<C-p>", "<cmd>Telescope find_files<CR>", { desc = "Find files (like VSCode Ctrl+P)" })
-
-    -- === Fuzzy find buffers (like Ctrl + B in VSCode) ===
-    map("n", "<C-b>", "<cmd>Telescope buffers<CR>", { desc = "Find open buffers (like VSCode Ctrl+B)" })
-
-    -- === File Explorer (like Ctrl + Shift + E in VSCode) ===
-    map("n", "<C-S-e>", "<cmd>Neotree toggle<CR>", { desc = "Toggle File Explorer (like VSCode)" })
-
+-- 在终端模式下的快捷键
+vim.keymap.set("t", "<C-h>", "<C-\\><C-n><C-w>h", { desc = "Go to left window" })
+vim.keymap.set("t", "<C-j>", "<C-\\><C-n><C-w>j", { desc = "Go to lower window" })
+vim.keymap.set("t", "<C-k>", "<C-\\><C-n><C-w>k", { desc = "Go to upper window" })
+vim.keymap.set("t", "<C-l>", "<C-\\><C-n><C-w>l", { desc = "Go to right window" })
