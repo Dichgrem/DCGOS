@@ -2,29 +2,29 @@
 
 # Check if running on NixOS
 if [ -n "$(cat /etc/os-release | grep -i nixos)" ]; then
-    echo "Current running NixOS, going next step"
-    echo "----------------------------------------------------------------"
+  echo "Current running NixOS, going next step"
+  echo "----------------------------------------------------------------"
 else
-    echo "Please install under NixOS host"
-    exit
+  echo "Please install under NixOS host"
+  exit
 fi
 
 # Check if boot directory exists to detect NixOS LiveCD environment
 if [ -d "/boot" ]; then
-    echo "Running on installed NixOS, going next step"
-    echo "----------------------------------------------------------------"
+  echo "Running on installed NixOS, going next step"
+  echo "----------------------------------------------------------------"
 else
-    echo "Please install under installed NixOS not in LiveCD"
-    exit 1
+  echo "Please install under installed NixOS not in LiveCD"
+  exit 1
 fi
 
-# Get username
+# Getusername
 if [ "$(whoami)" == "root" ]; then
-    echo "Please install as a normal user rather than root"
-    exit 1
+  echo "Please install as a normal user rather than root"
+  exit 1
 else
-    echo "Successfully get the username, going next step"
-    echo "----------------------------------------------------------------"
+  echo "Successfully get the username, going next step"
+  echo "----------------------------------------------------------------"
 fi
 
 echo "Default options are in brackets [ ]"
@@ -44,7 +44,7 @@ sed -i "/^\s*hostname[[:space:]]*=[[:space:]]*\"/s/\"\(.*\)\"/\"$hostName\"/" ./
 userName=$(whoami)
 sed -i "/^\s*username[[:space:]]*=[[:space:]]*\"/s/\"\(.*\)\"/\"$userName\"/" ./flake.nix
 
-nixos-generate-config --show-hardware-config > ./hosts/$hostName/hardware.nix
+nixos-generate-config --show-hardware-config >./hosts/$hostName/hardware.nix
 
 git add .
 
