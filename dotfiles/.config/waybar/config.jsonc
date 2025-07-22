@@ -1,0 +1,171 @@
+{
+  "layer": "top",
+  "position": "top",
+  //"height": 20,
+  "margin-left": 10,
+  "margin-bottom": 0,
+  "margin-right": 10,
+  "spacing": 8,
+  "modules-left": [
+    "custom/startmenu",
+    "backlight",
+    "battery",
+    "network",
+    "hyprland/workspaces",
+    "niri/workspaces",
+    "sway/workspaces"
+  ],
+  "modules-center": [
+    "wlr/taskbar"
+  ],
+  "modules-right": [
+    "custom/screenshot",
+    "tray",
+    "custom/wl-gammarelay-brightness",
+    "custom/wl-gammarelay-temperature",
+    "wireplumber",
+    "clock",
+    "custom/swaync",
+  ],
+
+  // -------------------------------------------------------------------------
+  // Modules
+  // -------------------------------------------------------------------------
+
+  "custom/startmenu": {
+    "format": " ",
+    "tooltip": false,
+    "on-click": "wlogout",
+    "on-click-right": "fuzzel",
+  },
+
+  "backlight": {
+    "device": "intel_backlight",
+    "format": "{icon} {percent}%",
+    "format-icons": [""],
+    "on-scroll-down": "brightnessctl s 2%-",
+    "on-scroll-up": "brightnessctl s +2%",
+  },
+
+  "battery": {
+    "interval": 5,
+    "states": {
+      "good": 95,
+      "warning": 15,
+      "critical": 10,
+    },
+    "format": "{icon} {capacity}%",
+    "format-charging": " {capacity}%",
+    "format-plugged": " {capacity}%",
+    "format-icons": ["", "", "", "", ""],
+  },
+
+  "network": {
+    "interval": 3,
+    "format": "{bandwidthUpBytes} {bandwidthDownBytes}",
+    "format-disconnected": "󰲜 ",
+    "on-click": "alacritty -e zenith",
+    "on-click-right": "corestats",
+    "tooltip-format": "{ifname}\n{ipaddr}/{cidr}\n",
+  },
+
+  "hyprland/workspaces": {
+    "all-outputs": true,
+    "format": "{name}",
+    "on-scroll-down": "hyprctl dispatch workspace e+1 1>/dev/null",
+    "on-scroll-up": "hyprctl dispatch workspace e-1 1>/dev/null",
+    "sort-by-number": true,
+    "active-only": false,
+  },
+
+  "niri/workspaces": {
+    "format": "{icon}",
+  },
+
+  "sway/workspaces": {
+    "all-outputs": true,
+    "format": "{name}",
+  },
+
+  "wlr/taskbar": {
+      "format": "{icon}",
+      "icon-size": 22,
+      "spacing": 3,
+      "tooltip-format": "{title}",
+      "ignore-list": [],
+      "on-click": "activate",
+      "on-click-middle": "close",
+  },
+
+  "custom/screenshot": {
+    "format": " 󰨵 ",
+    "on-click": "sh ~/.config/waybar/scripts/Screenshot-Area.sh",
+    "on-click-right": "nemo ~/Pictures/Screenshots",
+    "on-click-middle": "sh ~/.config/waybar/scripts/Screenshot-Fullscreen.sh",
+    "tooltip": false,
+  },
+
+  "tray": {
+    "spacing": 8,
+  },
+
+  "custom/wl-gammarelay-brightness": {
+      "format": "{}%",
+      "exec": "wl-gammarelay-rs watch {bp}",
+      "on-click": "busctl --user set-property rs.wl-gammarelay / rs.wl.gammarelay Brightness d 0.7",
+      "on-click-right": "busctl --user set-property rs.wl-gammarelay / rs.wl.gammarelay Brightness d 1",
+      "on-scroll-up": "busctl --user -- call rs.wl-gammarelay / rs.wl.gammarelay UpdateBrightness d +0.02",
+      "on-scroll-down": "busctl --user -- call rs.wl-gammarelay / rs.wl.gammarelay UpdateBrightness d -0.02",
+      "tooltip": false
+  },
+  "custom/wl-gammarelay-temperature": {
+      "format": "{}K",
+      "exec": "wl-gammarelay-rs watch {t}",
+      "on-click": "busctl --user set-property rs.wl-gammarelay / rs.wl.gammarelay Temperature q 4500",
+      "on-click-right": "busctl --user set-property rs.wl-gammarelay / rs.wl.gammarelay Temperature q 6500",
+      "on-scroll-up": "busctl --user -- call rs.wl-gammarelay / rs.wl.gammarelay UpdateTemperature n +100",
+      "on-scroll-down": "busctl --user -- call rs.wl-gammarelay / rs.wl.gammarelay UpdateTemperature n -100",
+      "tooltip": false
+  },
+
+  "wireplumber": {
+    "on-click": "pwvucontrol",
+    "on-click-right": "easyeffects",
+    "on-click-middle": "swayosd-client --output-volume mute-toggle",
+    "on-scroll-down": "swayosd-client --output-volume -2",
+    "on-scroll-up": "swayosd-client --output-volume +2",
+    "format": "{icon} {volume}%",
+    "format-muted": "MUTE",
+    "format-source": "",
+    "format-source-muted": "",
+    "format-icons": {
+      "default": ["", "", ""],
+    },
+  },
+
+  "clock": {
+    "interval": 60,
+    "align": 0,
+    "rotate": 0,
+    "tooltip-format": "<tt><big>{calendar}</big></tt>",
+    "format": " {:%H:%M}",
+    "format-alt": " {:%a %b %d, %G}",
+  },
+
+  "custom/swaync": {
+    "tooltip": true,
+    "format": " {icon} ",
+    "format-icons": {
+      "notification": "",
+      "none": "",
+      "dnd-notification": "",
+      "dnd-none": "",
+    },
+    "return-type": "json",
+    "exec-if": "which swaync-client",
+    "exec": "swaync-client -swb",
+    "on-click": "swaync-client -t -sw",
+    "escape": true,
+  },
+}
+
