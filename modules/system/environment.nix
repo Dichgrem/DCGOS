@@ -74,6 +74,7 @@ in {
       clang
       zig
       nano
+      bat
     ];
   };
 
