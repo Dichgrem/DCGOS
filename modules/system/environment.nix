@@ -72,6 +72,7 @@ in {
       gcc
       clang
       zig
+      nano
     ];
   };
 
