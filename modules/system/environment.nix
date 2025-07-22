@@ -59,6 +59,7 @@ in {
       zola
       go
       pnpm
+      tree
 
       #Android
       android-tools
@@ -68,6 +69,9 @@ in {
       libnotify
       libvirt
       lm_sensors
+      gcc
+      clang
+      zig
     ];
   };
 
