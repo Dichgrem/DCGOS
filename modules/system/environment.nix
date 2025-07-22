@@ -53,7 +53,6 @@ in {
       curl
       nexttrace
       aria2
-      syncthing
 
       #Blog
       zola
