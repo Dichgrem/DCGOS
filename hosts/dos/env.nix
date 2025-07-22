@@ -51,7 +51,7 @@
   ### See https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 
   ## Wayland related
-  MonitorSettings = "monitor = , preferred, auto, auto";
+  MonitorSettings = "monitor=eDP-1, preferred, auto, 1.25";
   ### MonitorSettings For Hyprland See https://wiki.hyprland.org/Configuring/Monitors/
 
   OutputSettings = "output * scale 1";
