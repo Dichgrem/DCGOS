@@ -21,7 +21,7 @@ DeactivateKeys=
 TogglePreedit=
 
 [Hotkey/TriggerKeys]
-0=Ctrl+Shift
+0=Control+Shift+Shift_L
 
 [Hotkey/PrevPage]
 0=Up
