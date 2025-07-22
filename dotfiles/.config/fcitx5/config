@@ -21,7 +21,7 @@ DeactivateKeys=
 TogglePreedit=
 
 [Hotkey/TriggerKeys]
-0=Super+space
+0=Alt+Shift
 
 [Hotkey/PrevPage]
 0=Up
@@ -70,4 +70,3 @@ AllowInputMethodForPassword=False
 ShowPreeditForPassword=False
 # Interval of saving user data in minutes
 AutoSavePeriod=30
-
