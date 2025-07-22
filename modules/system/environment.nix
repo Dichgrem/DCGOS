@@ -59,6 +59,7 @@ in {
       zola
       go
       pnpm
+      nodejs_20
       tree
 
       #Android
