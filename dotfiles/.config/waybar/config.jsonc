@@ -2,15 +2,15 @@
   "layer": "top",
   "position": "top",
   //"height": 20,
-  "margin-left": 10,
+  "margin-left": 0,
   "margin-bottom": 0,
-  "margin-right": 10,
+  "margin-right": 0,
   "spacing": 8,
   "modules-left": [
     "custom/startmenu",
     "backlight",
+    "wireplumber",
     "battery",
-    "network",
     "hyprland/workspaces",
     "niri/workspaces",
     "sway/workspaces"
@@ -21,9 +21,8 @@
   "modules-right": [
     "custom/screenshot",
     "tray",
-    "custom/wl-gammarelay-brightness",
-    "custom/wl-gammarelay-temperature",
-    "wireplumber",
+//    "custom/wl-gammarelay-brightness",
+//    "custom/wl-gammarelay-temperature",
     "clock",
     "custom/swaync",
   ],
@@ -60,15 +59,6 @@
     "format-icons": ["", "", "", "", ""],
   },
 
-  "network": {
-    "interval": 3,
-    "format": "{bandwidthUpBytes} {bandwidthDownBytes}",
-    "format-disconnected": "󰲜 ",
-    "on-click": "alacritty -e zenith",
-    "on-click-right": "corestats",
-    "tooltip-format": "{ifname}\n{ipaddr}/{cidr}\n",
-  },
-
   "hyprland/workspaces": {
     "all-outputs": true,
     "format": "{name}",
@@ -96,7 +86,7 @@
       "on-click": "activate",
       "on-click-middle": "close",
   },
-
+/*
   "custom/screenshot": {
     "format": " 󰨵 ",
     "on-click": "sh ~/.config/waybar/scripts/Screenshot-Area.sh",
@@ -104,7 +94,7 @@
     "on-click-middle": "sh ~/.config/waybar/scripts/Screenshot-Fullscreen.sh",
     "tooltip": false,
   },
-
+*/
   "tray": {
     "spacing": 8,
   },
@@ -127,7 +117,7 @@
       "on-scroll-down": "busctl --user -- call rs.wl-gammarelay / rs.wl.gammarelay UpdateTemperature n -100",
       "tooltip": false
   },
-
+/*
   "wireplumber": {
     "on-click": "pwvucontrol",
     "on-click-right": "easyeffects",
@@ -142,14 +132,38 @@
       "default": ["", "", ""],
     },
   },
+*/
 
+  "wireplumber": {
+    "on-click": "pwvucontrol",
+    "on-click-right": "easyeffects",
+    "on-click-middle": "pamixer -t && swayosd-client --output-volume mute-toggle",
+    "on-scroll-down": "pamixer -d 1 && swayosd-client --output-volume -1",
+    "on-scroll-up": "pamixer -i 1 && swayosd-client --output-volume +1",
+    "format": "{icon} {volume}%",
+    "format-muted": "MUTE",
+    "format-source": "",
+    "format-source-muted": "",
+    "format-icons": {
+      "default": ["", "", ""]
+    },
+  },
+/*
   "clock": {
     "interval": 60,
     "align": 0,
     "rotate": 0,
     "tooltip-format": "<tt><big>{calendar}</big></tt>",
-    "format": " {:%H:%M}",
-    "format-alt": " {:%a %b %d, %G}",
+    "format": " {:%d.%m.%Y}",
+    "format-alt": " {:%b%d %a,%G}",
+  },
+*/
+  "clock": {
+    "interval": 60,
+    "align": 0,
+    "rotate": 0,
+    "format": " {:%a %d %H:%M}",
+    "tooltip-format": "<tt><big>{:%A, %d %B %Y}</big></tt>",
   },
 
   "custom/swaync": {
