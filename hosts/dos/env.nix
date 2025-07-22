@@ -24,7 +24,7 @@
   ### See https://openzfs.github.io/openzfs-docs/Getting%20Started/NixOS/index.html
 
   ## Software related
-  QEMU-VM-Use-Case = false;
+  QEMU-VM-Use-Case = true;
   ### See https://github.com/qemu/qemu ; https://github.com/virt-manager/virt-manager
 
   Transparent-Proxy = false;
