@@ -1,9 +1,9 @@
 _: {
   services = {
-    fstrim = {
-      enable = true;
-      interval = "weekly";
-    };
+#    fgrim = {
+#      enable = true;
+#      interval = "weekly";
+#    };
     gvfs.enable = true;
     scx = {
       enable = true;
