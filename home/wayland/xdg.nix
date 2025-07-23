@@ -10,8 +10,8 @@
         "peazip-extract-downloads.desktop"
         "peazip-extract-here.desktop"
       ];
-      browser = ["brave-browser.desktop"];
-      editor = ["dev.zed.Zed.desktop"];
+      browser = ["floorp.desktop"];
+      editor = ["neovim"];
       filemanager = ["nemo.desktop"];
       image-viewer = ["oculante.desktop"];
       media-player = ["vlc.desktop"];
