@@ -5,7 +5,7 @@ _: {
       source = [
         {
           address = "pool.ntp.org";
-          mode = "pool";
+          mode = "server";
         }
         {
           address = "time.cloudflare.com";
