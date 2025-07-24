@@ -8,6 +8,7 @@ TERM = "xterm-256color"
 [window]
 dynamic_padding = true
 decorations = "None"
+opacity = 0.85
 
 [window.dimensions]
 columns = 100
