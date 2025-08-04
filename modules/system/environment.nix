@@ -55,7 +55,6 @@ in {
       aria2
 
       #Blog
-      zola
       go
       pnpm
       nodejs_20
