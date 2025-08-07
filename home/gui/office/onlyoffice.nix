@@ -1,5 +1,4 @@
-{pkgs, ...}: {
-  home.packages = with pkgs; [
-    onlyoffice-bin
-  ];
+{ lib, ... }: {
+  programs.onlyoffice.enable = true;
 }
+
