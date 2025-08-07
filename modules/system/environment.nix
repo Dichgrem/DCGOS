@@ -73,6 +73,7 @@ in {
       zig
       nano
       bat
+      pamixer
     ];
   };
 
