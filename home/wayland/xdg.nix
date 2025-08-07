@@ -14,7 +14,7 @@
       editor = ["neovim"];
       filemanager = ["nemo.desktop"];
       image-viewer = ["oculante.desktop"];
-      media-player = ["vlc.desktop"];
+      media-player = ["mpv.desktop"];
     in {
       associations = {
         added = {
