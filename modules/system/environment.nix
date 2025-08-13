@@ -74,6 +74,8 @@ in {
       nano
       bat
       pamixer
+      iperf3
+      handbrake
     ];
   };
 
