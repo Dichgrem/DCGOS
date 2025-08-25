@@ -41,7 +41,7 @@ in {
       zstd
 
       # Greeter with ddm
-      greetd.tuigreet
+      tuigreet
 
       # For OBS virtual cam support
       v4l-utils
@@ -53,6 +53,7 @@ in {
       curl
       nexttrace
       aria2
+      yt-dlp
 
       #Blog
       go
