@@ -13,7 +13,6 @@
     Locale
     StateVersion
     TimeZone
-    ZFS-Use-Case
     ;
 in
   with lib; {
@@ -55,7 +54,6 @@ in
             }
           ];
           theme = mkForce "${pkgs.minimal-grub-theme}";
-          zfsSupport = ZFS-Use-Case;
         };
         systemd-boot = mkIf (BootLoader == "systemd-boot") {
           configurationLimit = 50;
