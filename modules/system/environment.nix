@@ -47,11 +47,13 @@ in {
       v4l-utils
 
       # Editor
+      nano
       neovim
 
       # Networking tool
-      curl
+      iperf3
       nexttrace
+      curl
       aria2
       yt-dlp
 
@@ -69,14 +71,11 @@ in {
       libnotify
       libvirt
       lm_sensors
+
+      # Dev
       gcc
       clang
       zig
-      nano
-      bat
-      pamixer
-      iperf3
-      handbrake
     ];
   };
 
