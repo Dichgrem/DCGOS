@@ -64,6 +64,9 @@ in {
       tree
 
       #Android
+      xxd
+      file
+      binwalk
       android-tools
       payload-dumper-go
 
