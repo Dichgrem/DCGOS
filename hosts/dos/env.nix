@@ -34,14 +34,17 @@
   Locale = "en_US.UTF-8";
   ### See https://docs.moodle.org/405/en/Table_of_locales
 
-  StateVersion = "25.05";
+  StateVersion = "25.11";
   ### See https://mynixos.com/nixpkgs/option/system.stateVersion
 
   TimeZone = "Asia/Singapore";
   ### See https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 
   ## Wayland related
-  MonitorSettings = "monitor=eDP-1, preferred, auto, 1.25";
+  MonitorSettings = "
+  monitor=eDP-1, 2560x1600@165, 0x0, 1.25
+  monitor=DP-1, 2560x1440@144, 2560x0, 1.25
+  ";
   ### MonitorSettings For Hyprland See https://wiki.hyprland.org/Configuring/Monitors/
 
   OutputSettings = "output * scale 1";

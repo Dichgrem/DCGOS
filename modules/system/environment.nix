@@ -79,6 +79,7 @@ in {
       gcc
       clang
       zig
+      zed-editor
     ];
   };
 
