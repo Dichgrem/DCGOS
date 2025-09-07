@@ -21,8 +21,8 @@
   "modules-right": [
     "custom/screenshot",
     "tray",
-//    "custom/wl-gammarelay-brightness",
-//    "custom/wl-gammarelay-temperature",
+    "custom/wl-gammarelay-brightness",
+/   "custom/wl-gammarelay-temperature",
     "clock",
     "custom/swaync",
   ],
