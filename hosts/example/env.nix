@@ -34,7 +34,7 @@
   Locale = "en_US.UTF-8";
   ### See https://docs.moodle.org/405/en/Table_of_locales
 
-  StateVersion = "25.05";
+  StateVersion = "25.11";
   ### See https://mynixos.com/nixpkgs/option/system.stateVersion
 
   TimeZone = "Asia/Singapore";
