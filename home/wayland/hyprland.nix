@@ -20,9 +20,9 @@ mkIf (WM == "Hyprland") {
   ];
   wayland.windowManager.hyprland = {
     enable = true;
-    plugins = [
-      pkgs.hyprlandPlugins.hy3
-    ];
+#    plugins = [
+#      pkgs.hyprlandPlugins.hy3
+#    ];
     systemd = {
       enable = true;
       variables = [ "--all" ];
