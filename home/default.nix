@@ -11,7 +11,8 @@ in {
     ls ./cli
     ++ ls ./gui
     ++ ls ./tui
-    ++ ls ./wayland;
+    ++ ls ./wayland
+    ++ [ ./nixvim ];
 
   home = {
     file = {

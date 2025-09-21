@@ -13,14 +13,28 @@
     nixvim.url = "github:nix-community/nixvim";
     stylix.url = "github:danth/stylix";
   };
+
   outputs = inputs: let
     hostname = "dos";
     username = "dich";
   in {
     nixosConfigurations = {
       "${hostname}" = inputs.nixpkgs.lib.nixosSystem {
-        modules = [./hosts];
-        specialArgs = {inherit hostname inputs username;};
+        specialArgs = { inherit hostname inputs username; };
+        modules = [
+          ./hosts
+          inputs.home-manager.nixosModules.home-manager
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.users.${username} = {
+              imports = [
+                ./home
+                inputs.nixvim.homeModules.nixvim
+              ];
+            };
+          }
+        ];
       };
     };
   };
