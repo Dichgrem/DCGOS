@@ -48,7 +48,6 @@ in {
 
       # Editor
       nano
-      neovim
 
       # Networking tool
       iperf3
@@ -56,12 +55,6 @@ in {
       curl
       aria2
       yt-dlp
-
-      #Blog
-      go
-      pnpm
-      nodejs_20
-      tree
 
       #Android
       xxd
@@ -71,15 +64,16 @@ in {
       payload-dumper-go
 
       # Misc
+      tree
       libnotify
       libvirt
       lm_sensors
 
       # Dev
+      go
       gcc
       clang
       zig
-      zed-editor
     ];
   };
 
