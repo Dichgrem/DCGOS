@@ -74,6 +74,8 @@ in {
       gcc
       clang
       zig
+      nodejs_20
+      pnpm
     ];
   };
 
