@@ -12,7 +12,7 @@
       browser = ["floorp.desktop"];
       editor = ["neovim"];
       filemanager = ["nemo.desktop"];
-      image-viewer = ["oculante.desktop"];
+      image-viewer = ["org.gnome.Loupe.desktop"];
       media-player = ["mpv.desktop"];
     in {
       associations = {

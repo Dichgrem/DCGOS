@@ -76,6 +76,7 @@ in {
       zig
       nodejs_20
       pnpm
+      eclipses.eclipse-java
     ];
   };
 
