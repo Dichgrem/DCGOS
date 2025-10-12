@@ -137,15 +137,15 @@
   "wireplumber": {
     "on-click": "pwvucontrol",
     "on-click-right": "easyeffects",
-    "on-click-middle": "pamixer -t && swayosd-client --output-volume mute-toggle",
-    "on-scroll-down": "pamixer -d 1 && swayosd-client --output-volume -1",
-    "on-scroll-up": "pamixer -i 1 && swayosd-client --output-volume +1",
+    "on-click-middle": "swayosd-client --output-volume mute-toggle",
+    "on-scroll-down": "swayosd-client --output-volume -2",
+    "on-scroll-up": "swayosd-client --output-volume +2",
     "format": "{icon} {volume}%",
     "format-muted": "MUTE",
     "format-source": "",
     "format-source-muted": "",
     "format-icons": {
-      "default": ["", "", ""]
+      "default": ["", "", ""],
     },
   },
 /*
