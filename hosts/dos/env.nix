@@ -54,6 +54,6 @@
   ### For Hyprland see https://wiki.hyprland.org/Configuring/XWayland/#hidpi-xwayland
   ### For sway see https://github.com/swaywm/sway/wiki#hidpi
 
-  WM = "Hyprland";
+  WM = "niri";
   ### Possible options: Hyprland ; niri ; sway
 }

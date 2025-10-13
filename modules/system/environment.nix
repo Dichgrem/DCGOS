@@ -69,6 +69,9 @@ in {
       libvirt
       lm_sensors
 
+      # Niri
+      wlr-randr
+
       # Dev
       go
       gcc
