@@ -1,19 +1,6 @@
 { lib, pkgs, username, ... }:
 
 {
-  services = {
-#    fgrim = {
-#      enable = true;
-#      interval = "weekly";
-#    };
-    gvfs.enable = true;
-    power-profiles-daemon.enable = true;
-    scx = {
-      enable = true;
-      scheduler = "scx_lavd";
-    };
-  };
-
   services.aria2.enable = false;
   systemd.services.aria2 = {
     description = "Aria2 Download Manager (dich)";
@@ -39,13 +26,4 @@
       PrivateTmp = true;
     };
   };
-
-  services.syncthing = {
-    enable = true;
-    user = username;
-    dataDir = "/home/${username}/Sync";
-    configDir = "/home/${username}/.config/syncthing";
-    guiAddress = "127.0.0.1:8384";
-  };
 }
-
