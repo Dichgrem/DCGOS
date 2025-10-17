@@ -8,11 +8,13 @@
   ls = lib.filesystem.listFilesRecursive;
 in {
   imports =
-    ls ./cli
+    [
+      ./nvim/default.nix
+    ]
+    ++ ls ./cli
     ++ ls ./gui
     ++ ls ./tui
     ++ ls ./wayland;
-
   home = {
     file = {
       ".config" = {
