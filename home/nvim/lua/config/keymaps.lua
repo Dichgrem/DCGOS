@@ -13,11 +13,11 @@ map("n", "<C-S-Tab>", "<cmd>bprevious<CR>", { desc = "Previous buffer (like VSCo
 vim.keymap.set("n", "<C-w>", "<cmd>BufferLinePickClose<CR>", { desc = "Close buffer (BufferLine)" })
 
 vim.keymap.set("n", "<C-S-5>", function()
-  if vim.bo.buftype == "terminal" then
-    vim.cmd("vsplit | terminal")
-  else
-    vim.cmd("botright split | terminal")
-  end
+	if vim.bo.buftype == "terminal" then
+		vim.cmd("vsplit | terminal")
+	else
+		vim.cmd("botright split | terminal")
+	end
 end, { desc = "Split terminal" })
 
 -- 在终端模式下的快捷键
@@ -27,5 +27,5 @@ vim.keymap.set("t", "<C-k>", "<C-\\><C-n><C-w>k", { desc = "Go to upper window" 
 vim.keymap.set("t", "<C-l>", "<C-\\><C-n><C-w>l", { desc = "Go to right window" })
 
 vim.keymap.set("n", "<leader>xo", function()
-  vim.fn.jobstart({ "xdg-open", vim.fn.expand("%:p") }, { detach = true })
+	vim.fn.jobstart({ "xdg-open", vim.fn.expand("%:p") }, { detach = true })
 end, { desc = "使用系统默认应用程序打开当前文件" })
