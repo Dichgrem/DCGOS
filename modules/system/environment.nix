@@ -68,6 +68,7 @@ in {
       libnotify
       libvirt
       lm_sensors
+      usbutils
 
       # Niri
       wlr-randr
@@ -75,10 +76,13 @@ in {
       # Dev
       go
       gcc
+      gdb
       clang
       zig
       nodejs_20
       pnpm
+
+      # School
       eclipses.eclipse-java
     ];
   };
