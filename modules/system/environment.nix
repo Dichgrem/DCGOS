@@ -81,9 +81,6 @@ in {
       zig
       nodejs_20
       pnpm
-
-      # School
-      eclipses.eclipse-java
     ];
   };
 
