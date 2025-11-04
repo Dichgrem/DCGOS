@@ -26,7 +26,7 @@
       homeMode = "755";
       ignoreShellProgramCheck = true;
       isNormalUser = true;
-      shell = pkgs.nushell;
+      shell = pkgs.zsh;
     };
   };
 }
