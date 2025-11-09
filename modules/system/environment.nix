@@ -89,7 +89,7 @@ in {
     fuse.userAllowOther = true;
     git = {
       enable = true;
-      package = pkgs.gitMinimal;
+      package = pkgs.gitFull;
     };
     ssh.startAgent = true;
   };

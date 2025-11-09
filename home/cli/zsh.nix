@@ -24,9 +24,7 @@
     ];
 
     initContent = ''
-      export LANG=zh_CN.UTF-8
-      export EDITOR=nano
-
+      export EDITOR=nvim
       # === History ===
       HISTFILE=$XDG_STATE_HOME/zsh/history
       HISTSIZE=10000
