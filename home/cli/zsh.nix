@@ -47,6 +47,7 @@
       alias ls='eza --icons=auto --group-directories-first'
       alias ll='eza -lh --icons=auto --group-directories-first'
       alias la='eza -lha --icons=auto --group-directories-first'
+      alias cat='bat --paging=never'
 
       alias grep='grep --color=auto'
       alias fgrep='fgrep --color=auto'

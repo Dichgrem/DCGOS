@@ -53,6 +53,7 @@ in {
       iperf3
       nexttrace
       curl
+      wget
       aria2
       yt-dlp
 
@@ -77,7 +78,9 @@ in {
       go
       gcc
       gdb
+      cmake
       clang
+      gnumake
       zig
       nodejs_20
       pnpm

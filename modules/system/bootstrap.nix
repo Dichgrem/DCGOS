@@ -104,10 +104,9 @@ in
 
     security = {
       rtkit.enable = true;
-      sudo.enable = false;
-      sudo-rs = {
+      sudo = {
         enable = true;
-        execWheelOnly = true;
+        wheelNeedsPassword = true;
       };
       pam.services = {
         hyprlock = {};
