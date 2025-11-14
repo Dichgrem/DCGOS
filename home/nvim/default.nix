@@ -3,27 +3,25 @@
   lib,
   pkgs,
   ...
-}: let
-  neo-tree-nvim-main = pkgs.vimUtils.buildVimPlugin {
-    pname = "neo-tree-nvim-main";
-    version = "3.35.2+6";
-    src = pkgs.fetchFromGitHub {
-      owner = "nvim-neo-tree";
-      repo = "neo-tree.nvim";
-      rev = "8dd9f08ff086d09d112f1873f88dc0f74b598cdb";
-      sha256 = "sha256-edthaqznGTJ+VFVORK7gfHI9J14PLAghG9prsWlzXtc=";
-    };
-    doCheck = false;
-    meta.homepage = "https://github.com/nvim-neo-tree/neo-tree.nvim/";
-    meta.hydraPlatforms = [];
-  };
-in {
+}: {
   programs.neovim = {
     enable = true;
     extraPackages = with pkgs; [
-      # LazyVim
+      black
+      ruff
+      google-java-format
+      jdt-language-server
+      prettierd
+      nodePackages.prettier
+      clang-tools
+      rustfmt
+      jq
+      yamlfmt
+      taplo
+      shfmt
       lua-language-server
       stylua
+      nixpkgs-fmt
     ];
 
     plugins = with pkgs.vimPlugins; [
@@ -41,10 +39,7 @@ in {
         friendly-snippets
         gitsigns-nvim
         lualine-nvim
-        {
-          name = "neo-tree.nvim";
-          path = neo-tree-nvim-main;
-        }
+        neo-tree-nvim
         neoconf-nvim
         neodev-nvim
         noice-nvim
@@ -55,7 +50,6 @@ in {
         nvim-spectre
         nvim-treesitter
         nvim-treesitter-context
-        nvim-treesitter-textobjects
         nvim-ts-autotag
         nvim-ts-context-commentstring
         nvim-web-devicons
@@ -199,7 +193,4 @@ in {
 
   # Normal LazyVim config here, see https://github.com/LazyVim/starter/tree/main/lua
   xdg.configFile."nvim/lua".source = ./lua;
-
-  # Set default editor
-  home.sessionVariables.EDITOR = "nvim";
 }
