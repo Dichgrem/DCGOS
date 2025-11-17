@@ -84,6 +84,8 @@ in {
       zig
       nodejs_20
       pnpm
+      rustc
+      cargo
     ];
   };
 

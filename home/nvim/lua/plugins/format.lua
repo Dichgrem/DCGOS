@@ -4,6 +4,7 @@ return {
 		opts = function(_, opts)
 			opts.format_on_save = nil
 			opts.formatters = opts.formatters or {}
+			opts.formatters_by_ft = opts.formatters_by_ft or {}
 			opts.formatters.nixpkgs_fmt = {
 				command = "nixpkgs-fmt",
 				args = function(ctx)
@@ -12,26 +13,38 @@ return {
 				stdin = true,
 				exit_codes = { 0 },
 			}
-			opts.formatters_by_ft = opts.formatters_by_ft or {}
-			opts.formatters_by_ft.nix = { "nixpkgs_fmt", stop_after_first = true }
+
+			-- Go
+			opts.formatters_by_ft.go = { "gofumpt" }
+			-- Lua
 			opts.formatters_by_ft.lua = { "stylua" }
-			opts.formatters_by_ft.python = { "black", "ruff_format" }
+			-- Nix
+			opts.formatters_by_ft.nix = { "nixpkgs_fmt", stop_after_first = true }
+			-- Java
+			opts.formatters_by_ft.java = { "google_java_format" }
+			-- Rust
+			opts.formatters_by_ft.rust = { "rustfmt" }
+			-- Shell
 			opts.formatters_by_ft.sh = { "shfmt" }
-			opts.formatters_by_ft.javascript = { "prettier" }
-			opts.formatters_by_ft.typescript = { "prettier" }
-			opts.formatters_by_ft.javascriptreact = { "prettier" }
-			opts.formatters_by_ft.typescriptreact = { "prettier" }
-			opts.formatters_by_ft.vue = { "prettier" }
-			opts.formatters_by_ft.go = { "gofmt" }
+			-- C/C++
 			opts.formatters_by_ft.c = { "clang_format" }
 			opts.formatters_by_ft.cpp = { "clang_format" }
-			opts.formatters_by_ft.rust = { "rustfmt" }
-			opts.formatters_by_ft.java = { "google-java-format" }
+			-- Python
+			opts.formatters_by_ft.python = { "black", "ruff_format" }
+			-- JS/TS/Web
+			opts.formatters_by_ft.javascript = { "prettierd" }
+			opts.formatters_by_ft.typescript = { "prettierd" }
+			opts.formatters_by_ft.javascriptreact = { "prettierd" }
+			opts.formatters_by_ft.typescriptreact = { "prettierd" }
+			opts.formatters_by_ft.vue = { "prettierd" }
+			-- JSON
 			opts.formatters_by_ft.json = { "jq" }
+			-- YAML
 			opts.formatters_by_ft.yaml = { "yamlfmt" }
+			-- TOML
 			opts.formatters_by_ft.toml = { "taplo" }
 			opts.default_format_opts = {
-				timeout_ms = 1000,
+				timeout_ms = 1500,
 				lsp_format = "fallback",
 				stop_after_first = false,
 			}
