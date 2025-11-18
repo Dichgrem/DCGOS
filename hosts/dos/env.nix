@@ -7,17 +7,10 @@
   GPU-AMD = true;
   ### See https://nixos.wiki/wiki/AMD_GPU
 
-  GPU-Nvidia = false;
-  ### See https://nixos.wiki/wiki/Nvidia
-
-  GPU-Intel = false;
-  ### See https://nixos.wiki/wiki/Intel_Graphics
-
-  HotSpot-Use-Case = false;
-  ### See https://nixos.wiki/wiki/Internet_Connection_Sharing
-
   ## Software related
   QEMU-VM-Use-Case = true;
+
+  Database-Use-Case = true;
   ### See https://github.com/qemu/qemu ; https://github.com/virt-manager/virt-manager
 
   # Options

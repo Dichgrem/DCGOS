@@ -46,9 +46,6 @@ in {
       # For OBS virtual cam support
       v4l-utils
 
-      # Editor
-      nano
-
       # Networking tool
       iperf3
       nexttrace
@@ -76,16 +73,19 @@ in {
 
       # Dev
       go
+      zig
+      lua
       gcc
       gdb
       cmake
       clang
       gnumake
-      zig
-      nodejs_20
-      pnpm
       rustc
       cargo
+      jdk17
+      python312
+      pnpm
+      nodejs_20
     ];
   };
 
