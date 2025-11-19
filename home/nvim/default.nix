@@ -35,6 +35,10 @@
       #C/C++
       clang-tools
 
+      #Kotlin
+      ktlint
+      kotlin-language-server
+
       #Python
       ruff
       black
@@ -177,6 +181,8 @@
             { import = "lazyvim.plugins.extras.lang.yaml" },
             { import = "lazyvim.plugins.extras.lang.toml" },
             { import = "lazyvim.plugins.extras.lang.docker" },
+            { import = "lazyvim.plugins.extras.lang.kotlin" },
+            { import = "lazyvim.plugins.extras.lang.dart" },
             { import = "plugins" },
             -- treesitter handled by xdg.configFile."nvim/parser", put this line at the end of spec to clear ensure_installed
             { "nvim-treesitter/nvim-treesitter",
@@ -199,11 +205,13 @@
             with plugins; [
               bash
               c
-              lua
-              python
               go
+              lua
               rust
               java
+              dart
+              kotlin
+              python
               javascript
               typescript
               tsx

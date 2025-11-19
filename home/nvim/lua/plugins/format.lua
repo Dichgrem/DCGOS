@@ -29,6 +29,8 @@ return {
 			-- C/C++
 			opts.formatters_by_ft.c = { "clang_format" }
 			opts.formatters_by_ft.cpp = { "clang_format" }
+			-- Kotlin
+			opts.formatters_by_ft.kotlin = { "ktlint" }
 			-- Python
 			opts.formatters_by_ft.python = { "black", "ruff_format" }
 			-- JS/TS/Web
@@ -43,6 +45,15 @@ return {
 			opts.formatters_by_ft.yaml = { "yamlfmt" }
 			-- TOML
 			opts.formatters_by_ft.toml = { "taplo" }
+			-- Dart / Flutter
+			opts.formatters_by_ft.dart = {
+				command = "dart",
+				args = function(ctx)
+					return { "format", ctx.bufname }
+				end,
+				stdin = false,
+				exit_codes = { 0 },
+			}
 			opts.default_format_opts = {
 				timeout_ms = 1500,
 				lsp_format = "fallback",

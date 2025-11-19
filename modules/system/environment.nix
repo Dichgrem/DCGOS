@@ -67,6 +67,7 @@ in {
       libvirt
       lm_sensors
       usbutils
+      libsecret
 
       # Niri
       wlr-randr
@@ -82,6 +83,9 @@ in {
       gnumake
       rustc
       cargo
+      dart
+      kotlin
+      flutter
       jdk17
       python312
       pnpm
@@ -92,10 +96,6 @@ in {
   programs = {
     dconf.enable = true;
     fuse.userAllowOther = true;
-    git = {
-      enable = true;
-      package = pkgs.gitFull;
-    };
     ssh.startAgent = true;
   };
 }
