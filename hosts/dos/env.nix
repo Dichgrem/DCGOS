@@ -6,12 +6,15 @@
 
   GPU-AMD = true;
   ### See https://nixos.wiki/wiki/AMD_GPU
+  
+  Power-control = "TLP";
+  ### Possible options: PPD ; TLP
 
   ## Software related
   QEMU-VM-Use-Case = true;
+  ### See https://github.com/qemu/qemu ; https://github.com/virt-manager/virt-manager
 
   Database-Use-Case = true;
-  ### See https://github.com/qemu/qemu ; https://github.com/virt-manager/virt-manager
 
   # Options
   ## System related

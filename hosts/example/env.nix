@@ -16,9 +16,14 @@
   HotSpot-Use-Case = false;
   ### See https://nixos.wiki/wiki/Internet_Connection_Sharing
 
+  Power control = "PPD";
+  ### Possible options: PPD ; TLP
+
   ## Software related
   QEMU-VM-Use-Case = false;
   ### See https://github.com/qemu/qemu ; https://github.com/virt-manager/virt-manager
+
+  Database-Use-Case = true;
 
   # Options
   ## System related

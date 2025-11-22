@@ -29,3 +29,16 @@ vim.keymap.set("t", "<C-l>", "<C-\\><C-n><C-w>l", { desc = "Go to right window" 
 vim.keymap.set("n", "<leader>xo", function()
 	vim.fn.jobstart({ "xdg-open", vim.fn.expand("%:p") }, { detach = true })
 end, { desc = "使用系统默认应用程序打开当前文件" })
+
+-- === Markdown priview ===
+vim.keymap.set("n", "<leader>mp", "<cmd>Markview<CR>", {
+  desc = "Toggle Markview Inline Preview",
+})
+-- 开启对比预览
+vim.keymap.set("n", "<leader>mv", "<cmd>Markview splitToggle<CR>", {
+  desc = "Toggle Markview Split Preview",
+})
+-- 关闭对比预览
+vim.keymap.set("n", "<leader>mc", "<cmd>Markview splitClose<CR>", {
+  desc = "Close Markview Split Preview",
+})
