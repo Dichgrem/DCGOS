@@ -24,7 +24,7 @@ binds {
     // Shortcuts
     Super+Shift+Slash { show-hotkey-overlay; }
     Super+E { spawn "nemo"; }
-    Super+B { spawn "floorp";}
+    Super+B { spawn "firefox";}
     Super+L { spawn "hyprlock";}
     Super+M { spawn-sh "$HOME/.config/niri/switch_monitors.sh"; }
     Ctrl+Super+Q { spawn "wlogout"; }

@@ -37,7 +37,7 @@
     autoEnable = true;
     targets = {
       fcitx5.enable = false;
-      floorp.enable = false;
+      firefox.enable = false;
       hyprland.enable = false;
       kde.enable = false;
       mpv.enable = false;

@@ -9,7 +9,7 @@
         "peazip-extract-downloads.desktop"
         "peazip-extract-here.desktop"
       ];
-      browser = ["floorp.desktop"];
+      browser = ["firefox.desktop"];
       editor = ["neovim"];
       filemanager = ["nemo.desktop"];
       image-viewer = ["org.gnome.Loupe.desktop"];

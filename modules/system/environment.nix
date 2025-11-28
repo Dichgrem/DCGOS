@@ -58,6 +58,7 @@ in {
       xxd
       file
       binwalk
+      qtscrcpy
       android-tools
       payload-dumper-go
 
