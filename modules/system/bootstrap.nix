@@ -17,9 +17,19 @@
 in
   with lib; {
     boot = {
-      bcache.enable = false;
+      blacklistedKernelModules = [
+        "iTCO_wdt"
+        "iTCO_vendor_support"
+        "intel_pmc_bxt"
+        "mei"
+        "mei_hdcp"
+        "mei_me"
+        "mei_pxp"
+        "pstore"
+        "sp5100_tco"
+        "wdat_wdt"
+      ];
       consoleLogLevel = 2; # Only errors and warnings are displayed
-      extraModprobeConfig = "blacklist mei mei_hdcp mei_me mei_pxp iTCO_wdt pstore sp5100_tco";
       extraModulePackages = [
         config.boot.kernelPackages.v4l2loopback # v4l2loopback is for OBS Virtual Cam Support
       ];
