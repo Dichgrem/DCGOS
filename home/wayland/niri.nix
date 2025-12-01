@@ -36,6 +36,5 @@ in
           pkgs.xdg-desktop-portal-gtk
           pkgs.xdg-desktop-portal-gnome
         ];
-        configPackages = [pkgs.niri];
       };
     }

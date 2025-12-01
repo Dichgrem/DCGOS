@@ -181,9 +181,8 @@ binds {
 
 environment {
     CURRENT_COMPOSITOR "niri"
-    DISPLAY ":0"
-    XDG_CURRENT_DESKTOP "niri"
-    XDG_SESSION_DESKTOP "niri"
+    XDG_CURRENT_DESKTOP "Niri"
+    XDG_SESSION_DESKTOP "Niri"
 }
 
 
@@ -201,7 +200,7 @@ spawn-at-startup "blueman-applet"
 spawn-at-startup "sh" "-c" "dbus-update-activation-environment --systemd --all && systemctl --user stop niri-session.target && systemctl --user start niri-session.target"
 spawn-at-startup "swayosd-server"
 spawn-at-startup "swww-daemon"
-spawn-at-startup "sh" "-c" "sleep 1 && swww img $HOME/Git/DCGOS/dotfiles/.local/share/wallpapers/yohoho.jpg"
+spawn-at-startup "swww" "img" "$HOME/Git/DCGOS/dotfiles/.local/share/wallpapers/yohoho.jpg"
 spawn-at-startup "swww" "restore"
 spawn-at-startup "waybar"
 spawn-at-startup "lxqt-policykit-agent"

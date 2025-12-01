@@ -48,3 +48,5 @@ echo "$NEXT_MODE" > "$STATE_FILE"
 # 刷新 Niri 布局（防止残影）
 sleep 0.5
 niri msg reload-layout >/dev/null 2>&1 || true
+pkill swayosd-server
+(swayosd-server &>/dev/null &)
