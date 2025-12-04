@@ -9,9 +9,12 @@ in
       package = pkgs.mysql84;
     };
 
+    systemd.services.mysql = {
+      enable = false;
+    };
+
     environment.systemPackages = [
       pkgs.dbeaver-bin
     ];
   };
 }
-
