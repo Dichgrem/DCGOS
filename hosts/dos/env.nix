@@ -6,7 +6,9 @@
 
   GPU-AMD = true;
   ### See https://nixos.wiki/wiki/AMD_GPU
-  
+ 
+  SingBox = true;
+
   Power-control = "TLP";
   ### Possible options: PPD ; TLP
 

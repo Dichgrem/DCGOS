@@ -16,6 +16,8 @@
   HotSpot-Use-Case = false;
   ### See https://nixos.wiki/wiki/Internet_Connection_Sharing
 
+  SingBox = true;
+
   Power control = "PPD";
   ### Possible options: PPD ; TLP
 
