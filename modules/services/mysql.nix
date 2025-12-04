@@ -9,9 +9,12 @@ in
       package = pkgs.mysql84;
     };
 
+    systemd.services.mysql = {
+      wantedBy = lib.mkForce [ ];
+    };
+
     environment.systemPackages = [
       pkgs.dbeaver-bin
     ];
   };
 }
-
