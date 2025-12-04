@@ -30,9 +30,9 @@ in
         "wdat_wdt"
       ];
       consoleLogLevel = 2; # Only errors and warnings are displayed
-      extraModulePackages = [
-        config.boot.kernelPackages.v4l2loopback # v4l2loopback is for OBS Virtual Cam Support
-      ];
+      # extraModulePackages = [
+      #   config.boot.kernelPackages.v4l2loopback # v4l2loopback is for OBS Virtual Cam Support
+      # ];
       initrd = {
         compressor = "zstd";
         compressorArgs = ["-T0" "-19" "--long"];
@@ -43,7 +43,7 @@ in
         "kernel.core_pattern" = "|/bin/false"; # Disable automatic core dumps
         "vm.max_map_count" = 2147483642; # Needed For Some Steam Games
       };
-      kernelModules = ["v4l2loopback"]; # v4l2loopback is for OBS Virtual Cam Support
+      # kernelModules = ["v4l2loopback"]; # v4l2loopback is for OBS Virtual Cam Support
       kernelPackages = pkgs.${KernelPackages};
       kernelParams = ["audit=0" "console=tty1" "erst_disable" "nmi_watchdog=0" "noatime" "nowatchdog"];
       loader = {

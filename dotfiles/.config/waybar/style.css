@@ -131,3 +131,27 @@ tooltip label {
     padding-right: 8px;
     padding-left: 10px;
 }
+#custom-startmenu {
+    color: @overlay2;
+}
+
+#wireplumber {
+    color: @green;
+}
+
+#custom-wl-gammarelay-brightness {
+    color: @sapphire;
+}
+
+#custom-wl-gammarelay-temperature {
+    color: @teal;
+}
+
+#custom-swaync {
+    color: @overlay2;
+}
+
+#wlr-taskbar {
+    color: @subtext0;
+}
+

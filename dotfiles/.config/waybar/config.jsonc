@@ -10,7 +10,7 @@
     "custom/startmenu",
     "backlight",
     "wireplumber",
-    "battery",
+    "custom/wl-gammarelay-brightness",
     "hyprland/workspaces",
     "niri/workspaces",
     "sway/workspaces"
@@ -21,9 +21,9 @@
   "modules-right": [
     "custom/screenshot",
     "tray",
-    "custom/wl-gammarelay-brightness",
 //    "custom/wl-gammarelay-temperature",
     "clock",
+    "battery",
     "custom/swaync",
   ],
 
@@ -182,4 +182,3 @@
     "escape": true,
   },
 }
-
