@@ -90,7 +90,7 @@ in {
       jdk17
       python312
       pnpm
-      nodejs_20
+      nodejs_24
     ];
   };
 

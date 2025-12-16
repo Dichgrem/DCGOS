@@ -5,40 +5,31 @@
 local map = vim.keymap.set
 local opts = { noremap = true, silent = true }
 
--- === VSCode-like buffer/tab navigation ===
+-- === VSCode-like buffer/tab navigation   ===
 map("n", "<C-Tab>", "<cmd>bnext<CR>", { desc = "Next buffer (like VSCode)" })
 map("n", "<C-S-Tab>", "<cmd>bprevious<CR>", { desc = "Previous buffer (like VSCode)" })
 
--- === Close buffer like Ctrl + W in VSCode ===
-vim.keymap.set("n", "<C-w>", "<cmd>BufferLinePickClose<CR>", { desc = "Close buffer (BufferLine)" })
+-- === Vscode-like Close buffer navigation ===
+vim.keymap.set("n", "<C-w>", function()
+  local current = vim.api.nvim_get_current_buf()
+  local buffers = vim.fn.getbufinfo({buflisted = 1})
 
-vim.keymap.set("n", "<C-S-5>", function()
-	if vim.bo.buftype == "terminal" then
-		vim.cmd("vsplit | terminal")
-	else
-		vim.cmd("botright split | terminal")
-	end
-end, { desc = "Split terminal" })
+  local next_buf = nil
+  for i, buf in ipairs(buffers) do
+    if buf.bufnr == current then
+      next_buf = buffers[i + 1] or buffers[i - 1]
+      break
+    end
+  end
 
--- 在终端模式下的快捷键
-vim.keymap.set("t", "<C-h>", "<C-\\><C-n><C-w>h", { desc = "Go to left window" })
-vim.keymap.set("t", "<C-j>", "<C-\\><C-n><C-w>j", { desc = "Go to lower window" })
-vim.keymap.set("t", "<C-k>", "<C-\\><C-n><C-w>k", { desc = "Go to upper window" })
-vim.keymap.set("t", "<C-l>", "<C-\\><C-n><C-w>l", { desc = "Go to right window" })
+  if next_buf then
+    vim.api.nvim_set_current_buf(next_buf.bufnr)
+  end
 
+  vim.api.nvim_buf_delete(current, { force = true })
+end, { desc = "Close current buffer like VSCode" })
+
+-- XDG Open
 vim.keymap.set("n", "<leader>xo", function()
 	vim.fn.jobstart({ "xdg-open", vim.fn.expand("%:p") }, { detach = true })
 end, { desc = "使用系统默认应用程序打开当前文件" })
-
--- === Markdown priview ===
-vim.keymap.set("n", "<leader>mp", "<cmd>Markview<CR>", {
-  desc = "Toggle Markview Inline Preview",
-})
--- 开启对比预览
-vim.keymap.set("n", "<leader>mv", "<cmd>Markview splitToggle<CR>", {
-  desc = "Toggle Markview Split Preview",
-})
--- 关闭对比预览
-vim.keymap.set("n", "<leader>mc", "<cmd>Markview splitClose<CR>", {
-  desc = "Close Markview Split Preview",
-})

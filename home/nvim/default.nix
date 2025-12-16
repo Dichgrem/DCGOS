@@ -45,6 +45,7 @@
       python312Packages.python-lsp-server
 
       #JS/TS/Web
+      biome
       prettierd
       nodePackages.prettier
 
@@ -93,7 +94,6 @@
           which-key-nvim
           fzf-lua
           snacks-nvim
-          markview-nvim
           {
             name = "lazydev.nvim";
             path = lazydev-nvim;
@@ -223,8 +223,6 @@
               yaml
               toml
               dockerfile
-              markdown
-              markdown_inline
             ])).dependencies;
       };
     in

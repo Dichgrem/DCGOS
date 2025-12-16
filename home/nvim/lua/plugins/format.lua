@@ -34,11 +34,11 @@ return {
 			-- Python
 			opts.formatters_by_ft.python = { "black", "ruff_format" }
 			-- JS/TS/Web
-			opts.formatters_by_ft.javascript = { "prettierd" }
-			opts.formatters_by_ft.typescript = { "prettierd" }
-			opts.formatters_by_ft.javascriptreact = { "prettierd" }
-			opts.formatters_by_ft.typescriptreact = { "prettierd" }
-			opts.formatters_by_ft.vue = { "prettierd" }
+			opts.formatters_by_ft.javascript = { "biome" }
+			opts.formatters_by_ft.typescript = { "biome" }
+			opts.formatters_by_ft.javascriptreact = { "biome" }
+			opts.formatters_by_ft.typescriptreact = { "biome" }
+			opts.formatters_by_ft.vue = { "biome" }
 			-- JSON
 			opts.formatters_by_ft.json = { "jq" }
 			-- YAML
