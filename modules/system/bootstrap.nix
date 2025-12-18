@@ -144,7 +144,6 @@ in
     };
 
     system = {
-      rebuild.enableNg = true;
       stateVersion = StateVersion;
     };
 
