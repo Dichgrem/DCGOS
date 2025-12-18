@@ -53,6 +53,7 @@ in {
       wget
       aria2
       yt-dlp
+      openssl
 
       #Android
       xxd
@@ -90,7 +91,12 @@ in {
       jdk17
       python312
       pnpm
+      bun
       nodejs_24
+
+      # Agent
+      codex
+      gemini-cli
     ];
   };
 

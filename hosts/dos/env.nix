@@ -1,57 +1,65 @@
 {
-  # Specific Use Cases
-  ## Hardware related
+  # -------------------- Hardware --------------------
+  # See: https://github.com/blueman-project/blueman
   Bluetooth = true;
-  ### See https://github.com/blueman-project/blueman
 
+  # See: https://nixos.wiki/wiki/AMD_GPU
   GPU-AMD = true;
-  ### See https://nixos.wiki/wiki/AMD_GPU
- 
-  SingBox = true;
 
-  Power-control = "TLP";
-  ### Possible options: PPD ; TLP
+  # See: https://nixos.wiki/wiki/Nvidia
+  GPU-Nvidia = false;
 
-  ## Software related
-  QEMU-VM-Use-Case = true;
-  ### See https://github.com/qemu/qemu ; https://github.com/virt-manager/virt-manager
+  # See: https://nixos.wiki/wiki/Intel_Graphics
+  GPU-Intel = false;
 
-  Database-Use-Case = true;
+  # See: https://github.com/linrunner/TLP
+  Power-control = "TLP"; ## Possible options: PPD ; TLP
 
-  # Options
-  ## System related
-  BootLoader = "systemd-boot";
-  ### Possible options: grub ; grub-mirror ; systemd-boot # See https://nixos.wiki/wiki/Bootloader https://search.nixos.org/options?channel=unstable&from=0&size=50&sort=relevance&type=packages&query=mirroredBoots
+  # -------------------- System --------------------
+  # See https://nixos.wiki/wiki/Bootloader
+  # See: https://search.nixos.org/options?show=boot.loader.grub.mirroredBoots
+  BootLoader = "systemd-boot"; ## Possible options: grub ; grub-mirror ; systemd-boot
 
+  # See: https://search.nixos.org/options?show=boot.kernelPackages
+  # See: https://www.nyx.chaotic.cx/#using-sched-ext-schedulers
   KernelPackages = "linuxPackages_zen";
-  ### See https://search.nixos.org/options?show=boot.kernelPackages https://www.nyx.chaotic.cx/#using-sched-ext-schedulers
 
-  KeyboardLayout = "us";
-  ### See https://en.wikipedia.org/wiki/Keyboard_layout
-
-  Locale = "en_US.UTF-8";
-  ### See https://docs.moodle.org/405/en/Table_of_locales
-
+  # See: https://mynixos.com/nixpkgs/option/system.stateVersion
   StateVersion = "26.05";
-  ### See https://mynixos.com/nixpkgs/option/system.stateVersion
 
+  # See: https://docs.moodle.org/405/en/Table_of_locales
+  Locale = "en_US.UTF-8";
+
+  # See: https://en.wikipedia.org/wiki/Keyboard_layout
+  KeyboardLayout = "us";
+
+  # See: https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
   TimeZone = "Asia/Singapore";
-  ### See https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 
-  ## Wayland related
+  # -------------------- Display --------------------
+  WM = "niri"; ## Options: "Hyprland" | "niri" | "sway"
+
+  # See: https://wiki.hyprland.org/Configuring/XWayland/#hidpi-xwayland
+  # See: https://github.com/swaywm/sway/wiki#hidpi
+  ScaleLevel = "1";
+
+  # See: https://github.com/swaywm/sway/wiki#display-configuration
+  OutputSettings = "output * scale 1";
+
+  # See: https://wiki.hyprland.org/Configuring/Monitors
   MonitorSettings = "
   monitor=eDP-1, 2560x1600@165, 0x0, 1.25
   monitor=DP-1, 2560x1440@144, 2560x0, 1.25
   ";
-  ### MonitorSettings For Hyprland See https://wiki.hyprland.org/Configuring/Monitors/
 
-  OutputSettings = "output * scale 1";
-  ### OutputSettings For sway See https://github.com/swaywm/sway/wiki#display-configuration
+  # -------------------- Software --------------------
+  # See: https://sing-box.sagernet.org
+  SingBox = true;
 
-  ScaleLevel = "1";
-  ### For Hyprland see https://wiki.hyprland.org/Configuring/XWayland/#hidpi-xwayland
-  ### For sway see https://github.com/swaywm/sway/wiki#hidpi
+  # See: https://github.com/qemu/qemu
+  # See: https://github.com/virt-manager/virt-manager
+  QEMU-VM-Use-Case = true;
 
-  WM = "niri";
-  ### Possible options: Hyprland ; niri ; sway
+  # See: https://github.com/dbeaver/dbeaver
+  Database-Use-Case = true;
 }
