@@ -70,6 +70,7 @@ in {
       lm_sensors
       usbutils
       libsecret
+      lsof
 
       # Niri
       wlr-randr
@@ -95,7 +96,7 @@ in {
       nodejs_24
 
       # Agent
-      codex
+      opencode
       gemini-cli
     ];
   };
