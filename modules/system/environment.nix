@@ -71,6 +71,7 @@ in {
       usbutils
       libsecret
       lsof
+      nano
 
       # Niri
       wlr-randr
@@ -97,7 +98,7 @@ in {
 
       # Agent
       opencode
-      gemini-cli
+      gemini-cli-bin
     ];
   };
 
