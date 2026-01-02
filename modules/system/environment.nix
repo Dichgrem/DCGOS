@@ -97,7 +97,7 @@ in {
 
       # Agent
       opencode
-      gemini-cli
+      gemini-cli-bin
     ];
   };
 
