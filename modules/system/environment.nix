@@ -72,6 +72,7 @@ in {
       libsecret
       lsof
       nano
+      zed-editor
 
       # Niri
       wlr-randr
