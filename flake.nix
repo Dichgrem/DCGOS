@@ -9,10 +9,6 @@
     lazyvim.url = "github:pfassina/lazyvim-nix";
     stylix.inputs.nixpkgs.follows = "nixpkgs";
     stylix.url = "github:danth/stylix";
-    # chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
-    # daeuniverse.url = "github:daeuniverse/flake.nix";
-    # disko.inputs.nixpkgs.follows = "nixpkgs";
-    # disko.url = "github:nix-community/disko";
   };
 
   outputs = inputs: let

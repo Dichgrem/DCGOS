@@ -22,7 +22,7 @@
 
   # See: https://search.nixos.org/options?show=boot.kernelPackages
   # See: https://www.nyx.chaotic.cx/#using-sched-ext-schedulers
-  KernelPackages = "linuxPackages_zen";
+  KernelPackages = "linuxPackages_lqx";
 
   # See: https://mynixos.com/nixpkgs/option/system.stateVersion
   StateVersion = "26.05";
@@ -59,7 +59,4 @@
   # See: https://github.com/qemu/qemu
   # See: https://github.com/virt-manager/virt-manager
   QEMU-VM-Use-Case = true;
-
-  # See: https://github.com/dbeaver/dbeaver
-  Database-Use-Case = true;
 }

@@ -56,7 +56,4 @@
   # See: https://github.com/qemu/qemu
   # See: https://github.com/virt-manager/virt-manager
   QEMU-VM-Use-Case = false;
-
-  # See: https://github.com/dbeaver/dbeaver
-  Database-Use-Case = true;
 }
