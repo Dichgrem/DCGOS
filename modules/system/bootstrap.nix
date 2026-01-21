@@ -45,7 +45,7 @@ in
       };
       kernelModules = ["v4l2loopback"]; # v4l2loopback is for OBS Virtual Cam Support
       kernelPackages = pkgs.${KernelPackages};
-      kernelParams = ["audit=0" "console=tty1" "erst_disable" "nmi_watchdog=0" "noatime" "nowatchdog"];
+      kernelParams = ["8250.nr_uarts=0" "8250.skip_txen_test=1" "i8042.nopnp" "amd_pstate=active" "audit=0" "console=tty1" "erst_disable" "nmi_watchdog=0" "noatime" "nowatchdog"];
       loader = {
         grub = mkIf (strings.hasInfix "grub" BootLoader) {
           configurationLimit = 50;
@@ -101,15 +101,13 @@ in
     };
 
     networking = {
-      dhcpcd.extraConfig = "nohook resolv.conf";
       firewall.enable = false;
       hostName = hostname;
-      nameservers = ["127.0.0.1" "::1"];
+      nameservers = ["8.8.8.8" "1.1.1.1"];
       networkmanager = {
         dns = "none";
         enable = true;
       };
-      resolvconf.enable = mkForce false;
     };
 
     security = {

@@ -6,12 +6,6 @@
   # See: https://nixos.wiki/wiki/AMD_GPU
   GPU-AMD = false;
 
-  # See: https://nixos.wiki/wiki/Nvidia
-  GPU-Nvidia = false;
-
-  # See: https://nixos.wiki/wiki/Intel_Graphics
-  GPU-Intel = false;
-
   # See: https://github.com/linrunner/TLP
   Power-control = "PPD"; ## Possible options: PPD ; TLP
 

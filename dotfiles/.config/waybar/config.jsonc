@@ -39,7 +39,7 @@
   },
 
   "backlight": {
-    "device": "intel_backlight",
+    "device": "amdgpu_bl1",
     "format": "{icon} {percent}%",
     "format-icons": [""],
     "on-scroll-down": "brightnessctl s 2%-",
@@ -86,15 +86,7 @@
       "on-click": "activate",
       "on-click-middle": "close",
   },
-/*
-  "custom/screenshot": {
-    "format": " 󰨵 ",
-    "on-click": "sh ~/.config/waybar/scripts/Screenshot-Area.sh",
-    "on-click-right": "nemo ~/Pictures/Screenshots",
-    "on-click-middle": "sh ~/.config/waybar/scripts/Screenshot-Fullscreen.sh",
-    "tooltip": false,
-  },
-*/
+
   "tray": {
     "spacing": 8,
   },
@@ -108,6 +100,7 @@
       "on-scroll-down": "busctl --user -- call rs.wl-gammarelay / rs.wl.gammarelay UpdateBrightness d -0.02",
       "tooltip": false
   },
+
   "custom/wl-gammarelay-temperature": {
       "format": "{}K",
       "exec": "wl-gammarelay-rs watch {t}",
@@ -117,47 +110,21 @@
       "on-scroll-down": "busctl --user -- call rs.wl-gammarelay / rs.wl.gammarelay UpdateTemperature n -100",
       "tooltip": false
   },
-/*
-  "wireplumber": {
-    "on-click": "pwvucontrol",
-    "on-click-right": "easyeffects",
-    "on-click-middle": "swayosd-client --output-volume mute-toggle",
-    "on-scroll-down": "swayosd-client --output-volume -2",
-    "on-scroll-up": "swayosd-client --output-volume +2",
-    "format": "{icon} {volume}%",
-    "format-muted": "MUTE",
-    "format-source": "",
-    "format-source-muted": "",
-    "format-icons": {
-      "default": ["", "", ""],
-    },
-  },
-*/
 
   "wireplumber": {
-    "on-click": "pwvucontrol",
-    "on-click-right": "easyeffects",
-    "on-click-middle": "swayosd-client --output-volume mute-toggle",
-    "on-scroll-down": "swayosd-client --output-volume -2",
-    "on-scroll-up": "swayosd-client --output-volume +2",
     "format": "{icon} {volume}%",
-    "format-muted": "MUTE",
+    "format-muted": " MUTE",
     "format-source": "",
     "format-source-muted": "",
     "format-icons": {
-      "default": ["", "", ""],
+      "default": ["", "", ""]
     },
+    "on-scroll-up":   "wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+",
+    "on-scroll-down": "wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-",
+    "on-click": "pwvucontrol",
+    // "on-click-right": "easyeffects"
   },
-/*
-  "clock": {
-    "interval": 60,
-    "align": 0,
-    "rotate": 0,
-    "tooltip-format": "<tt><big>{calendar}</big></tt>",
-    "format": " {:%d.%m.%Y}",
-    "format-alt": " {:%b%d %a,%G}",
-  },
-*/
+
   "clock": {
     "interval": 60,
     "align": 0,

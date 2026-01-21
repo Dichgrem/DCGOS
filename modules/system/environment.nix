@@ -52,16 +52,25 @@ in {
       curl
       wget
       aria2
+      syncthing
       yt-dlp
       openssl
 
-      #Android
+      # Android
       xxd
       file
       binwalk
       qtscrcpy
       android-tools
       payload-dumper-go
+
+      # Embedded
+      scons
+      openocd
+      stlink
+      stlink-tool
+      gcc-arm-embedded
+      tio
 
       # Misc
       tree
@@ -100,6 +109,10 @@ in {
       # Agent
       opencode
       gemini-cli-bin
+
+      # Blog
+      zola
+      pagefind
     ];
   };
 

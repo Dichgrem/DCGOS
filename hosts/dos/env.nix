@@ -6,12 +6,6 @@
   # See: https://nixos.wiki/wiki/AMD_GPU
   GPU-AMD = true;
 
-  # See: https://nixos.wiki/wiki/Nvidia
-  GPU-Nvidia = false;
-
-  # See: https://nixos.wiki/wiki/Intel_Graphics
-  GPU-Intel = false;
-
   # See: https://github.com/linrunner/TLP
   Power-control = "TLP"; ## Possible options: PPD ; TLP
 
@@ -49,7 +43,6 @@
   # See: https://wiki.hyprland.org/Configuring/Monitors
   MonitorSettings = "
   monitor=eDP-1, 2560x1600@165, 0x0, 1.25
-  monitor=DP-1, 2560x1440@144, 2560x0, 1.25
   ";
 
   # -------------------- Software --------------------

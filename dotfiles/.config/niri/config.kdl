@@ -165,17 +165,26 @@ binds {
     // Powers off the monitors. To turn them back on, do any input like
     // moving the mouse or pressing any other key.
     Super+Shift+P { power-off-monitors; }
+    // Volume control (stable)
+    XF86AudioRaiseVolume {
+        spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "5%+";
+    }
+    XF86AudioLowerVolume {
+        spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "5%-";
+    }
+    XF86AudioMute {
+        spawn "wpctl" "set-mute" "@DEFAULT_AUDIO_SINK@" "toggle";
+    }
+    XF86AudioMicMute {
+        spawn "wpctl" "set-mute" "@DEFAULT_AUDIO_SOURCE@" "toggle";
+    }
+    XF86MonBrightnessUp {
+        spawn "brightnessctl" "set" "+5%";
+    }
 
-    // Volume control
-    XF86AudioLowerVolume allow-when-locked=true { spawn "swayosd-client" "--output-volume" "-2"; }
-    XF86AudioMute allow-when-locked=true { spawn "swayosd-client" "--output-volume" "mute-toggle"; }
-    XF86AudioRaiseVolume allow-when-locked=true { spawn "swayosd-client" "--output-volume" "+2"; }
-    XF86MonBrightnessDown allow-when-locked=true { spawn "swayosd-client" "--brightness" "-5"; }
-    XF86MonBrightnessUp allow-when-locked=true { spawn "swayosd-client" "--brightness" "+5"; }
-
-    // Volume control (bonus)
-    Ctrl+Alt+Down allow-when-locked=true { spawn "swayosd-client" "--output-volume" "-2"; }
-    Ctrl+Alt+Up allow-when-locked=true { spawn "swayosd-client" "--output-volume" "+2"; }
+    XF86MonBrightnessDown {
+        spawn "brightnessctl" "set" "5%-";
+    }
 }
 
 
@@ -197,13 +206,10 @@ screenshot-path "~/Pictures/Screenshots/SCREENSHOT-%Y-%m-%d-%H:%M:%S.png"
 spawn-at-startup "fcitx5" "-d" "-r"
 spawn-at-startup "nm-applet"
 spawn-at-startup "blueman-applet"
-spawn-at-startup "sh" "-c" "dbus-update-activation-environment --systemd --all && systemctl --user stop niri-session.target && systemctl --user start niri-session.target"
-spawn-at-startup "swayosd-server"
 spawn-at-startup "swww-daemon"
 spawn-at-startup "swww" "img" "$HOME/Git/DCGOS/dotfiles/.local/share/wallpapers/yohoho.jpg"
 spawn-at-startup "swww" "restore"
 spawn-at-startup "waybar"
-spawn-at-startup "lxqt-policykit-agent"
 
 window-rule {
     block-out-from "screen-capture"
