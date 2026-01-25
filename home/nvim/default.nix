@@ -20,7 +20,7 @@
         toml.enable = true;
         docker.enable = true;
         kotlin.enable = true;
-        dart.enable = true;
+        # dart.enable = true;
         nix.enable = true;
       };
     };
