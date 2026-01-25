@@ -103,10 +103,9 @@ in
     networking = {
       firewall.enable = false;
       hostName = hostname;
-      nameservers = ["8.8.8.8" "1.1.1.1"];
       networkmanager = {
-        dns = "none";
         enable = true;
+        dns = "default";
       };
     };
 

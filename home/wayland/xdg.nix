@@ -13,7 +13,7 @@
       editor = ["neovim"];
       filemanager = ["nemo.desktop"];
       image-viewer = ["org.gnome.Loupe.desktop"];
-      media-player = ["mpv.desktop"];
+      media-player = ["vlc.desktop"];
     in {
       associations = {
         added = {
