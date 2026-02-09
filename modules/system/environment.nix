@@ -82,6 +82,7 @@ in {
       lsof
       nano
       zed-editor
+      pgadmin4
 
       # Niri
       wlr-randr
@@ -101,6 +102,7 @@ in {
       kotlin
       flutter
       jdk17
+      maven
       python312
       pnpm
       bun
