@@ -1,10 +1,11 @@
-{
-  hostname,
-  pkgs,
-  ...
-}: let
+{ hostname
+, pkgs
+, ...
+}:
+let
   inherit (import ../../hosts/${hostname}/env.nix) ScaleLevel;
-in {
+in
+{
   environment = {
     variables = {
       EDITOR = "nvim";
@@ -43,6 +44,14 @@ in {
       # Greeter with ddm
       tuigreet
 
+      # System
+      wlr-randr
+      libnotify
+      libvirt
+      lm_sensors
+      usbutils
+      libsecret
+
       # For OBS virtual cam support
       v4l-utils
 
@@ -55,10 +64,12 @@ in {
       syncthing
       yt-dlp
       openssl
+      lsof
 
       # Android
       xxd
       file
+      tree
       binwalk
       qtscrcpy
       android-tools
@@ -71,21 +82,6 @@ in {
       stlink-tool
       gcc-arm-embedded
       tio
-
-      # Misc
-      tree
-      libnotify
-      libvirt
-      lm_sensors
-      usbutils
-      libsecret
-      lsof
-      nano
-      zed-editor
-      pgadmin4
-
-      # Niri
-      wlr-randr
 
       # Dev
       go
@@ -115,6 +111,9 @@ in {
       # Blog
       zola
       pagefind
+
+      # Misc
+      nano
     ];
   };
 
