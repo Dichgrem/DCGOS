@@ -132,3 +132,13 @@ action = "ClearSelection"
 key = "Key0"
 mods = "Control"
 action = "ResetFontSize"
+
+[[keyboard.bindings]]
+key = "Tab"
+mods = "Control"
+chars = "\u001b[27;5;9~"
+
+[[keyboard.bindings]]
+key = "Tab"
+mods = "Control|Shift"
+chars = "\u001b[27;6;9~"
