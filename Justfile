@@ -86,13 +86,3 @@ username := `whoami`
   git add .
   ## Rebuild the system
   sudo nixos-rebuild switch --flake .#{{hostname}} --show-trace
-
-
-@upgrade-debug:
-  # Let system totally upgrade (deBug Mode)
-  ## Set hostname and username in flake.nix
-  sed -i "/^\s*hostname[[:space:]]*=[[:space:]]*\"/s/\"\(.*\)\"/\"{{hostname}}\"/" ./flake.nix
-  sed -i "/^\s*username[[:space:]]*=[[:space:]]*\"/s/\"\(.*\)\"/\"{{username}}\"/" ./flake.nix
-  git add .
-  ## Rebuild the system
-  sudo unbuffer nixos-rebuild switch --flake .#{{hostname}} --sudo --log-format internal-json --show-trace -L -v |& nom --json

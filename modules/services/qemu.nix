@@ -12,5 +12,6 @@ in {
       spice-webdavd.enable = true;
     };
     virtualisation.libvirtd.enable = true;
+    systemd.services.virt-secret-init-encryption.enable = false;
   };
 }
