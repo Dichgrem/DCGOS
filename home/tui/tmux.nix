@@ -7,7 +7,7 @@
     mouse = true;
     prefix = "C-a";
     historyLimit = 10000;
-    terminal = "screen-256color";
+    terminal = "tmux-256color";
 
     plugins = with pkgs.tmuxPlugins; [
       sensible
@@ -18,6 +18,8 @@
     ];
 
     extraConfig = ''
+      set -g xterm-keys on
+      set -s extended-keys on
       set -g @catppuccin_flavour 'mocha'
       set -g @catppuccin_window_tabs_enabled on
       set -g @catppuccin_status_background "default"
@@ -26,6 +28,7 @@
       bind j select-pane -D
       bind k select-pane -U
       bind l select-pane -R
+      bind y set-window-option synchronize-panes
     '';
   };
 }

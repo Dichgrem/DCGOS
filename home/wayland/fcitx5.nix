@@ -1,4 +1,4 @@
-{pkgs, ...}: {
+{ pkgs, ... }: {
   home.file.".local/share/fcitx5/rime" = {
     force = true;
     recursive = true;
@@ -16,6 +16,7 @@
       addons = with pkgs; [
         fcitx5-gtk
         fcitx5-rime
+        qt6Packages.fcitx5-qt
         libsForQt5.fcitx5-qt
       ];
       waylandFrontend = true;

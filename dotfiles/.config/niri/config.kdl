@@ -203,7 +203,7 @@ prefer-no-csd
 
 screenshot-path "~/Pictures/Screenshots/SCREENSHOT-%Y-%m-%d-%H:%M:%S.png"
 
-spawn-at-startup "fcitx5" "-d" "-r"
+// spawn-at-startup "fcitx5" "-d" "-r"
 spawn-at-startup "nm-applet"
 spawn-at-startup "blueman-applet"
 spawn-at-startup "swww-daemon"

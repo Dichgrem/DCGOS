@@ -65,6 +65,7 @@ in
       yt-dlp
       openssl
       lsof
+      rs-tftpd
 
       # Android
       xxd

@@ -16,7 +16,7 @@
 
   # See: https://search.nixos.org/options?show=boot.kernelPackages
   # See: https://www.nyx.chaotic.cx/#using-sched-ext-schedulers
-  KernelPackages = "linuxPackages_lqx";
+  KernelPackages = "linuxPackages_latest";
 
   # See: https://mynixos.com/nixpkgs/option/system.stateVersion
   StateVersion = "26.05";
