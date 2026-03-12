@@ -1,14 +1,16 @@
-{ hostname, lib, pkgs, ... }:
-with lib;
-let
-  inherit (import ../../hosts/${hostname}/env.nix) SingBox;
-in
 {
-  disabledModules = [ "services/networking/sing-box.nix" ];
+  hostname,
+  lib,
+  pkgs,
+  ...
+}:
+with lib; let
+  inherit (import ../../hosts/${hostname}/env.nix) SingBox;
+in {
+  disabledModules = ["services/networking/sing-box.nix"];
 
   config = mkIf SingBox {
-
-    environment.systemPackages = [ pkgs.sing-box ];
+    environment.systemPackages = [pkgs.sing-box];
 
     systemd.tmpfiles.rules = [
       "d /etc/sing-box 0755 root root -"
@@ -16,8 +18,8 @@ in
 
     systemd.services.sing-box = {
       description = "sing-box service (custom)";
-      after = [ "network.target" ];
-      wantedBy = [ ];
+      after = ["network.target"];
+      wantedBy = [];
 
       script = ''
         exec ${pkgs.sing-box}/bin/sing-box -D "$STATE_DIRECTORY" run -c /etc/sing-box/config.json

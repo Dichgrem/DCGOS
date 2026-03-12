@@ -1,11 +1,10 @@
-{ hostname
-, pkgs
-, ...
-}:
-let
-  inherit (import ../../hosts/${hostname}/env.nix) ScaleLevel;
-in
 {
+  hostname,
+  pkgs,
+  ...
+}: let
+  inherit (import ../../hosts/${hostname}/env.nix) ScaleLevel;
+in {
   environment = {
     variables = {
       EDITOR = "nvim";
@@ -104,6 +103,8 @@ in
       pnpm
       bun
       nodejs_24
+      deadnix
+      alejandra
 
       # Agent
       opencode
@@ -115,6 +116,8 @@ in
 
       # Misc
       nano
+      age
+      sops
     ];
   };
 

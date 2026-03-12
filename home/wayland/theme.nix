@@ -36,6 +36,7 @@
   stylix = {
     autoEnable = true;
     targets = {
+      neovim.enable = false;
       fcitx5.enable = false;
       firefox.enable = false;
       hyprland.enable = false;

@@ -1,10 +1,12 @@
-{ hostname, lib, pkgs, ... }:
-with lib;
-let
-  inherit (import ../../hosts/${hostname}/env.nix) Power-control;
-in
 {
-  services.power-profiles-daemon.enable = (Power-control == "PPD");
+  hostname,
+  lib,
+  ...
+}:
+with lib; let
+  inherit (import ../../hosts/${hostname}/env.nix) Power-control;
+in {
+  services.power-profiles-daemon.enable = Power-control == "PPD";
 
   services.tlp = lib.mkIf (Power-control == "TLP") {
     enable = true;

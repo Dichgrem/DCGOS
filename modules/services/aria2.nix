@@ -1,12 +1,14 @@
-{ lib, pkgs, username, ... }:
-
 {
+  pkgs,
+  username,
+  ...
+}: {
   services.aria2.enable = false;
   systemd.services.aria2 = {
     description = "Aria2 Download Manager (dich)";
-    after = [ "network.target" ];
-    wants = [ "network.target" ];
-    wantedBy = [ "multi-user.target" ];
+    after = ["network.target"];
+    wants = ["network.target"];
+    wantedBy = ["multi-user.target"];
 
     serviceConfig = {
       Type = "simple";
