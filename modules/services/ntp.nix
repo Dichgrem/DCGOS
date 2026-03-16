@@ -4,8 +4,8 @@ _: {
     settings = {
       source = [
         {
-          address = "pool.ntp.org";
-          mode = "server";
+          address = "cn.pool.ntp.org";
+          mode = "pool";
         }
         {
           address = "time.cloudflare.com";

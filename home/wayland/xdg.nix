@@ -10,7 +10,7 @@
         "peazip-extract-here.desktop"
       ];
       browser = ["firefox.desktop"];
-      editor = ["neovim"];
+      editor = ["dev.zed.Zed.desktop"];
       filemanager = ["nemo.desktop"];
       image-viewer = ["org.gnome.Loupe.desktop"];
       media-player = ["vlc.desktop"];
@@ -36,7 +36,7 @@
         "application/iso" = archiver-extract;
         "application/zip" = archiver-extract;
         "application/x-7z-compressed" = archiver-extract;
-        "application/x-ace-compressed" = archiver-useless-options;
+        "application/x-ace-compressed" = archiver-extract;
         "application/x-bzip2" = archiver-extract;
         "application/x-gzip" = archiver-extract;
         "application/x-rar-compressed" = archiver-extract;
@@ -68,11 +68,14 @@
 
         "image/*" = image-viewer;
         "image/avif" = image-viewer;
+        "image/bmp" = image-viewer;
         "image/gif" = image-viewer;
         "image/jpeg" = image-viewer;
+        "image/jpg" = image-viewer;
         "image/png" = image-viewer;
+        "image/svg+xml" = image-viewer;
+        "image/tiff" = image-viewer;
         "image/webp" = image-viewer;
-
         "audio/*" = media-player;
         "video/*" = media-player;
 

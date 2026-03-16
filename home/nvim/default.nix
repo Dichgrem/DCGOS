@@ -27,14 +27,13 @@
         yaml.enable = true;
         toml.enable = true;
         docker.enable = true;
+        dart.enable = true;
         kotlin.enable = true;
         nix.enable = true;
       };
     };
 
     extraPackages = with pkgs; [
-      #Go
-      gotools
       # Nix
       nixd
       # Lua

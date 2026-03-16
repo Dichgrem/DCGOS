@@ -30,13 +30,13 @@ in
       };
       systemd.user.targets.niri-session = {
         Unit = {
-          After = "graphical-session-pre.target graphical-session.target";
-          BindsTo = "graphical-session.target";
-          Conflicts = "shutdown.target";
+          After = ["graphical-session-pre.target" "graphical-session.target"];
+          BindsTo = ["graphical-session.target"];
+          Conflicts = ["shutdown.target"];
           DefaultDependencies = false;
           Description = "niri compositor session";
           Documentation = "man:systemd.special(7)";
-          Wants = "graphical-session-pre.target";
+          Wants = ["graphical-session-pre.target"];
         };
       };
       xdg.portal = {
@@ -44,9 +44,9 @@ in
         config = {
           common = {
             default = ["gtk"];
-            "org.freedesktop.impl.portal.RemoteDesktop" = "gnome";
-            "org.freedesktop.impl.portal.ScreenCast" = "gnome";
-            "org.freedesktop.impl.portal.Screenshot" = "gnome";
+            "org.freedesktop.impl.portal.RemoteDesktop" = ["gnome"];
+            "org.freedesktop.impl.portal.ScreenCast" = ["gnome"];
+            "org.freedesktop.impl.portal.Screenshot" = ["gnome"];
           };
         };
         extraPortals = [

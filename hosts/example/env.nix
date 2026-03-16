@@ -6,9 +6,6 @@
   # See: https://nixos.wiki/wiki/AMD_GPU
   GPU-AMD = false;
 
-  # See: https://github.com/linrunner/TLP
-  Power-control = "PPD"; ## Possible options: PPD ; TLP
-
   # -------------------- System --------------------
   # See https://nixos.wiki/wiki/Bootloader
   # See: https://search.nixos.org/options?show=boot.loader.grub.mirroredBoots

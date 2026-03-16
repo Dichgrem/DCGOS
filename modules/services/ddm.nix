@@ -4,20 +4,17 @@
   ...
 }: let
   inherit (import ../../hosts/${hostname}/env.nix) WM;
+  wmSession =
+    if WM == "niri"
+    then "niri-session"
+    else WM;
 in {
-  services = {
-    greetd = {
-      enable = true;
-      useTextGreeter = true;
-      settings = {
-        default_session = {
-          user = "greeter";
-          command =
-            if WM == "niri"
-            then "${pkgs.tuigreet}/bin/tuigreet -c niri-session -t --user-menu"
-            else "${pkgs.tuigreet}/bin/tuigreet -c ${WM} -t --user-menu";
-        };
-      };
+  services.greetd = {
+    enable = true;
+    useTextGreeter = true;
+    settings.default_session = {
+      user = "greeter";
+      command = "${pkgs.tuigreet}/bin/tuigreet -c ${wmSession} -t --user-menu";
     };
   };
   systemd.services.greetd.serviceConfig = {

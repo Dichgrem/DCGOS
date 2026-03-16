@@ -25,7 +25,6 @@ with lib; {
       enableLsColors = mkForce false;
     };
     command-not-found.enable = mkForce false;
-    nano.enable = mkForce false;
   };
 
   # Minimize services

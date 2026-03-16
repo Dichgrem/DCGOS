@@ -1,21 +1,21 @@
 {pkgs, ...}: {
   home.packages = with pkgs; [
-    polkit_gnome
+    lxqt.lxqt-policykit
   ];
-
-  systemd.user.services.polkit-gnome-authentication-agent = {
+  systemd.user.services.lxqt-policykit-agent = {
     Unit = {
-      Description = "PolicyKit GNOME Authentication Agent";
+      Description = "PolicyKit LXQt Authentication Agent";
       PartOf = ["graphical-session.target"];
       After = ["graphical-session.target"];
     };
     Service = {
-      ExecStart = "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1";
+      ExecStart = "${pkgs.lxqt.lxqt-policykit}/bin/lxqt-policykit-agent";
       Restart = "on-failure";
       Slice = "session.slice";
+      Environment = "QT_QPA_PLATFORM=wayland";
     };
     Install = {
-      WantedBy = ["graphical-session.target"];
+      WantedBy = ["niri-session.target"];
     };
   };
 }

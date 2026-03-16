@@ -202,13 +202,12 @@ hotkey-overlay {
 prefer-no-csd
 
 screenshot-path "~/Pictures/Screenshots/SCREENSHOT-%Y-%m-%d-%H:%M:%S.png"
-
-// spawn-at-startup "fcitx5" "-d" "-r"
+spawn-at-startup "systemctl" "--user" "import-environment" "WAYLAND_DISPLAY" "XDG_CURRENT_DESKTOP" "XDG_SESSION_DESKTOP" "XDG_SESSION_TYPE"
+spawn-at-startup "systemctl" "--user" "start" "niri-session.target"
 spawn-at-startup "nm-applet"
 spawn-at-startup "blueman-applet"
 spawn-at-startup "swww-daemon"
 spawn-at-startup "swww" "img" "$HOME/Git/DCGOS/dotfiles/.local/share/wallpapers/yohoho.jpg"
-spawn-at-startup "swww" "restore"
 spawn-at-startup "waybar"
 
 window-rule {
@@ -281,9 +280,6 @@ layout {
     default-column-width { proportion 1.00; }
     focus-ring {
         off
-        active-color "#31324400"
-        inactive-color "#31324400"
-        width 3
     }
     gaps 2
     preset-column-widths {
@@ -293,8 +289,8 @@ layout {
     }
 
     struts {
-        left 0.1
-        right 0.1
+        left 0
+        right 0
         top 0
         bottom 0
     }

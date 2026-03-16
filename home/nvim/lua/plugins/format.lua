@@ -41,7 +41,7 @@ return {
 			-- TOML
 			opts.formatters_by_ft.toml = { "taplo" }
 			-- Dart
-			opts.formatters_by_ft.dart = {
+			opts.formatters.dart_format = {
 				command = "dart",
 				args = function(ctx)
 					return { "format", ctx.bufname }
@@ -49,6 +49,7 @@ return {
 				stdin = false,
 				exit_codes = { 0 },
 			}
+			opts.formatters_by_ft.dart = { "dart_format" }
 			opts.formatters_by_ft.fish = nil
 			opts.notify_on_error = true
 			opts.notify_no_formatters = true

@@ -5,10 +5,9 @@
   ...
 }: let
   inherit (import ../../hosts/${hostname}/env.nix) GPU-AMD;
-in
-  with lib; {
-    config = mkIf GPU-AMD {
-      systemd.tmpfiles.rules = ["L+    /opt/rocm/hip   -    -    -     -    ${pkgs.rocmPackages.clr}"];
-      services.xserver.videoDrivers = ["amdgpu"];
-    };
-  }
+in {
+  systemd.tmpfiles.rules = lib.mkIf GPU-AMD [
+    "L+    /opt/rocm/hip   -    -    -     -    ${pkgs.rocmPackages.clr}"
+  ];
+  services.xserver.videoDrivers = lib.mkIf GPU-AMD ["amdgpu"];
+}

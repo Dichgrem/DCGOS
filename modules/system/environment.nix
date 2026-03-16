@@ -103,8 +103,11 @@ in {
       pnpm
       bun
       nodejs_24
+
+      # Nix
       deadnix
       alejandra
+      nix-update
 
       # Agent
       opencode
