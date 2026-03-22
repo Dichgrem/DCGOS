@@ -80,11 +80,6 @@ in
       keyMap = KeyboardLayout;
     };
 
-    hardware.graphics = {
-      enable = true;
-      enable32Bit = true;
-    };
-
     i18n = {
       defaultLocale = Locale;
       extraLocaleSettings = {

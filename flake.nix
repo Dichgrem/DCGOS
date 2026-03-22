@@ -9,6 +9,7 @@
     lazyvim.url = "github:pfassina/lazyvim-nix";
     stylix.inputs.nixpkgs.follows = "nixpkgs";
     stylix.url = "github:danth/stylix";
+    llm-agents.url = "github:numtide/llm-agents.nix";
   };
 
   outputs = inputs: let

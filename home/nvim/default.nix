@@ -54,7 +54,7 @@
       biome
       vscode-js-debug
       typescript-language-server
-      nodePackages.typescript
+      typescript
       # Python
       ruff
       pyright

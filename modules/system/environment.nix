@@ -1,9 +1,11 @@
 {
   hostname,
   pkgs,
+  inputs,
   ...
 }: let
   inherit (import ../../hosts/${hostname}/env.nix) ScaleLevel;
+  llm-agents = inputs.llm-agents.packages.${pkgs.stdenv.hostPlatform.system};
 in {
   environment = {
     variables = {
@@ -55,15 +57,16 @@ in {
       v4l-utils
 
       # Networking tool
-      iperf3
-      nexttrace
       curl
       wget
       aria2
-      syncthing
       yt-dlp
-      openssl
+      syncthing
+      iw
       lsof
+      openssl
+      iperf3
+      nexttrace
       rs-tftpd
 
       # Android
@@ -110,12 +113,12 @@ in {
       nix-update
 
       # Agent
-      opencode
-      gemini-cli-bin
+      llm-agents.opencode
 
       # Blog
       zola
       pagefind
+      rumdl
 
       # Misc
       nano

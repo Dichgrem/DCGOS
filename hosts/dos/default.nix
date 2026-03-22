@@ -21,6 +21,8 @@
         "libvirtd"
         "networkmanager"
         "wheel"
+        "video"
+        "render"
       ];
       # hashedPassword = "";
       homeMode = "755";
