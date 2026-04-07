@@ -43,6 +43,5 @@ with lib; {
   };
   nixpkgs = {
     config.allowUnfree = false;
-    hostPlatform = "x86_64-linux";
   };
 }

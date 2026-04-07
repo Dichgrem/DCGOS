@@ -206,7 +206,7 @@ spawn-at-startup "systemctl" "--user" "import-environment" "WAYLAND_DISPLAY" "XD
 spawn-at-startup "systemctl" "--user" "start" "niri-session.target"
 spawn-at-startup "nm-applet"
 spawn-at-startup "blueman-applet"
-spawn-at-startup "swaybg" "-i" "/home/dich/Git/DCGOS/dotfiles/.local/share/wallpapers/yohoho.jpg" "-m" "fill"
+spawn-at-startup "awww" "img" "$HOME/Git/DCGOS/dotfiles/.local/share/wallpapers/yohoho.jpg" "--transition-type" "none"
 
 window-rule {
     block-out-from "screen-capture"

@@ -99,8 +99,8 @@ in {
       cargo
       dart
       kotlin
-      flutter
       jdk17
+      jdk21
       maven
       python312
       pnpm
@@ -108,12 +108,15 @@ in {
       nodejs_24
 
       # Nix
+      devenv
       deadnix
       alejandra
+      nixfmt
       nix-update
 
       # Agent
       llm-agents.opencode
+      llm-agents.qwen-code
 
       # Blog
       zola
