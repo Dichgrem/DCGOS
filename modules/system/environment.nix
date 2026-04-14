@@ -86,47 +86,84 @@ in {
       gcc-arm-embedded
       tio
 
-      # Dev
-      go
-      zig
-      lua
-      gcc
-      gdb
-      cmake
-      clang
-      gnumake
-      rustc
-      cargo
-      dart
-      kotlin
-      jdk17
-      jdk21
-      maven
-      python312
-      pnpm
-      bun
-      nodejs_24
-
-      # Nix
+      # Nix-tools
       devenv
-      deadnix
-      alejandra
-      nixfmt
       nix-update
-
-      # Agent
-      llm-agents.opencode
-      llm-agents.qwen-code
 
       # Blog
       zola
       pagefind
-      rumdl
 
       # Misc
       nano
       age
       sops
+      smartmontools
+
+      # Languages
+      go
+      zig
+      lua
+      dart
+      kotlin
+      jdk17
+      jdk21
+      python312
+
+      # Toolchains
+      nodejs_24
+      bun
+      maven
+      cargo
+
+      # Compilers
+      gcc
+      clang
+      rustc
+
+      # Build Systems
+      cmake
+      gnumake
+
+      # LSP
+      nixd
+      pyright
+      lua-language-server
+      rust-analyzer
+      jdt-language-server
+      bash-language-server
+      typescript-language-server
+      kotlin-language-server
+
+      # Formatters
+      jq
+      taplo
+      yamlfmt
+      shfmt
+      clang-tools
+      ruff
+      stylua
+      biome
+      gofumpt
+      rustfmt
+      nixfmt
+      alejandra
+      ktlint
+      google-java-format
+
+      # Highlight
+      tree-sitter
+
+      # Linters
+      rumdl
+      deadnix
+
+      # Debug
+      gdb
+
+      # Agent
+      llm-agents.codex
+      llm-agents.opencode
     ];
   };
 
