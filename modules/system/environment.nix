@@ -158,6 +158,9 @@ in {
       rumdl
       deadnix
 
+      # Test
+      yaak
+
       # Debug
       gdb
 
