@@ -1,181 +1,46 @@
 {
-  "display": {
-    "separator": " ",
-  },
+  "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
   "logo": {
+    "type": "builtin",
+    "source": "nixos",
+    "height": 14,
     "padding": {
-      "top": 0,
+      "top": 1,
+      "right": 3
+    }
+  },
+  "display": {
+    "separator": "  ",
+    "size": {
+      "binary": true,
+      "ndigits": 1,
+      "spaceBeforeUnit": "never"
     },
+    "freq": {
+      "ndigits": 3,
+      "spaceBeforeUnit": "never"
+    }
   },
   "modules": [
-    {
-      "type": "custom",
-      "format": "\u001b[36m╭────────────┬──────────────────Hardware───────────────────────╮",
-    },
-    {
-      "type": "host",
-      "key": " PC         │",
-      "keyColor": "cyan",
-      "format": "{2}",
-      "outputColor": "cyan",
-    },
-    {
-      "type": "board",
-      "key": "│ ╠ Board   │",
-      "keyColor": "cyan",
-      "format": "{1}",
-      "outputColor": "cyan",
-    },
-    {
-      "type": "cpu",
-      "key": "│ ╠ CPU     │",
-      "keyColor": "cyan",
-      "format": "{1}",
-      "outputColor": "cyan",
-    },
-    {
-      "type": "gpu",
-      "key": "│ ╠ GPU     │",
-      "keyColor": "cyan",
-      "format": "{1} {2}",
-      "outputColor": "cyan",
-    },
-    {
-      "type": "memory",
-      "key": "│ ╠ RAM     │",
-      "keyColor": "cyan",
-      "outputColor": "cyan",
-    },
-    {
-      "type": "disk",
-      "key": "│ ╠ Disk    │",
-      "keyColor": "cyan",
-      "outputColor": "cyan",
-      "format": "{1} / {2} ({3}) {9}",
-    },
-    {
-      "type": "display",
-      "key": "│ ╠󰍺 Display │",
-      "keyColor": "cyan",
-      "outputColor": "cyan",
-      "format": "{1}x{2}@{3}Hz in {12}-inch",
-    },
-    {
-      "type": "battery",
-      "key": "│ ╠ Battery │",
-      "keyColor": "cyan",
-      "outputColor": "cyan",
-    },
-    {
-      "type": "uptime",
-      "key": "│ ╚ Uptime  │",
-      "keyColor": "cyan",
-      "format": "{1} days {2} hours {3} minutes",
-      "outputColor": "cyan",
-    },
-    {
-      "type": "custom",
-      "format": "\u001b[36m╰────────────┴─────────────────────────────────────────────────╯",
-    },
-    {
-      "type": "custom",
-      "format": "\u001b[34m╭────────────┬──────────────────Software───────────────────────╮",
-    },
-    {
-      "type": "os",
-      "key": " OS         │",
-      "keyColor": "blue",
-      "format": "{2} {8} {12}",
-      "outputColor": "blue",
-    },
-    {
-      "type": "kernel",
-      "key": "│ ╠ Kernel  │",
-      "keyColor": "blue",
-      "format": "{1} {2}",
-      "outputColor": "blue",
-    },
-    {
-      "type": "packages",
-      "key": "│ ╠󰏖 Packages│",
-      "keyColor": "blue",
-      "outputColor": "blue",
-    },
-    {
-      "type": "shell",
-      "key": "│ ╠ Shell   │",
-      "keyColor": "blue",
-      "outputColor": "blue",
-      "format": "{6} {4}",
-    },
-    {
-      "type": "terminal",
-      "key": "│ ╠ Terminal│",
-      "keyColor": "blue",
-      "outputColor": "blue",
-      "format": "{5} {6}",
-    },
-    {
-      "type": "lm",
-      "key": "│ ╠󰍂 LM      │",
-      "keyColor": "blue",
-      "outputColor": "blue",
-    },
-    {
-      "type": "de",
-      "key": "│ ╠ DE      │",
-      "keyColor": "blue",
-      "outputColor": "blue",
-      "format": "{2}",
-    },
-    {
-      "type": "wm",
-      "key": "│ ╠󱂬 WM      │",
-      "keyColor": "blue",
-      "outputColor": "blue",
-      "format": "{2} {5}",
-    },
-    {
-      "type": "cursor",
-      "key": "│ ╠󱄨 Cursor  │",
-      "keyColor": "blue",
-      "outputColor": "blue",
-    },
-    {
-      "type": "font",
-      "key": "│ ╠ Font    │",
-      "keyColor": "blue",
-      "outputColor": "blue",
-      "format": "{1}",
-    },
-    {
-      "type": "terminalfont",
-      "key": "│ ╠󰬴 TermFont│",
-      "keyColor": "blue",
-      "outputColor": "blue",
-    },
-    {
-      "type": "icons",
-      "key": "│ ╠ Icons   │",
-      "keyColor": "blue",
-      "outputColor": "blue",
-      "format": "{1} {2}",
-    },
-    {
-      "type": "title",
-      "key": "│ ╚ Hostname│",
-      "keyColor": "blue",
-      "outputColor": "blue",
-      "format": "{8}",
-    },
-    {
-      "type": "custom",
-      "format": "\u001b[34m╰────────────┴─────────────────────────────────────────────────╯",
-    },
-    {
-      "type": "custom",
-      "format": "\u001b[90m  \u001b[91m  \u001b[92m  \u001b[93m  \u001b[94m  \u001b[95m  \u001b[96m  \u001b[97m  \u001b[97m  \u001b[96m  \u001b[95m  \u001b[94m  \u001b[93m  \u001b[92m  \u001b[91m  \u001b[90m",
-    },
-  ],
+    "title",
+    "separator",
+    { "type": "os",           "key": " OS"         },
+    { "type": "uptime",       "key": " Uptime"     },
+    { "type": "kernel",       "key": " Kernel",     "format": "{release}" },
+    { "type": "packages",     "key": "󰏗 Packages",   "combined": true },
+    { "type": "shell",        "key": "󰞷 Shell"       },
+    { "type": "terminal",     "key": "󰆍 Terminal"    },
+    { "type": "cpu",          "key": " CPU",         "format": "{name}" },
+    { "type": "gpu",          "key": " GPU",         "format": "{name}" },
+    { "type": "memory",       "key": "󰑭 Memory",      "format": "{used} / {total}" },
+    { "type": "disk", "key": "󰋊 Disk", "format": "{1} / {2} {9}" },
+    { "type": "display",      "key": "󰍹 Display", "format": "{1}x{2}@{3}Hz" },
+    { "type": "lm",           "key": "󰍂 LM"          },
+    { "type": "wm",           "key": "󱂬 WM"          },
+    { "type": "cursor",       "key": "󱄨 Cursor"      },
+    { "type": "font", "key": " Font", "format": "{1}" },
+    { "type": "icons",        "key": "󰀻 Icons",       "format": "{1} {2}" },
+    "break",
+    { "type": "colors", "symbol": "block" }
+  ]
 }
-

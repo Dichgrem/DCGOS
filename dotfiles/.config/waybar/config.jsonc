@@ -8,44 +8,40 @@
   "spacing": 8,
   "modules-left": [
     "custom/startmenu",
-    "backlight",
-    "wireplumber",
-    "custom/wl-gammarelay-brightness",
     "hyprland/workspaces",
     "niri/workspaces",
-    "sway/workspaces"
+    "sway/workspaces",
   ],
+// "wlr/taskbar"
   "modules-center": [
-    "wlr/taskbar"
+    "clock"
   ],
   "modules-right": [
     "custom/screenshot",
-    "tray",
+    "backlight",
+    "custom/wl-gammarelay-brightness",
 //    "custom/wl-gammarelay-temperature",
-    "clock",
+    "wireplumber",
     "battery",
+    // "tray",
     "custom/swaync",
   ],
-
   // -------------------------------------------------------------------------
   // Modules
   // -------------------------------------------------------------------------
-
   "custom/startmenu": {
     "format": " ",
     "tooltip": false,
     "on-click": "wlogout",
     "on-click-right": "fuzzel",
   },
-
   "backlight": {
     "device": "amdgpu_bl1",
-    "format": "{icon} {percent}%",
+    "format": "{icon}\u2009\u2009{percent}%",
     "format-icons": [""],
     "on-scroll-down": "brightnessctl s 2%-",
     "on-scroll-up": "brightnessctl s +2%",
   },
-
   "battery": {
     "interval": 5,
     "states": {
@@ -58,7 +54,6 @@
     "format-plugged": " {capacity}%",
     "format-icons": ["", "", "", "", ""],
   },
-
   "hyprland/workspaces": {
     "all-outputs": true,
     "format": "{name}",
@@ -67,16 +62,13 @@
     "sort-by-number": true,
     "active-only": false,
   },
-
   "niri/workspaces": {
     "format": "{icon}",
   },
-
   "sway/workspaces": {
     "all-outputs": true,
     "format": "{name}",
   },
-
   "wlr/taskbar": {
       "format": "{icon}",
       "icon-size": 22,
@@ -86,13 +78,11 @@
       "on-click": "activate",
       "on-click-middle": "close",
   },
-
   "tray": {
     "spacing": 8,
   },
-
   "custom/wl-gammarelay-brightness": {
-      "format": "{}%",
+      "format": "\u2009{}%",
       "exec": "wl-gammarelay-rs watch {bp}",
       "on-click": "busctl --user set-property rs.wl-gammarelay / rs.wl.gammarelay Brightness d 0.7",
       "on-click-right": "busctl --user set-property rs.wl-gammarelay / rs.wl.gammarelay Brightness d 1",
@@ -100,7 +90,6 @@
       "on-scroll-down": "busctl --user -- call rs.wl-gammarelay / rs.wl.gammarelay UpdateBrightness d -0.02",
       "tooltip": false
   },
-
   "custom/wl-gammarelay-temperature": {
       "format": "{}K",
       "exec": "wl-gammarelay-rs watch {t}",
@@ -110,9 +99,8 @@
       "on-scroll-down": "busctl --user -- call rs.wl-gammarelay / rs.wl.gammarelay UpdateTemperature n -100",
       "tooltip": false
   },
-
   "wireplumber": {
-    "format": "{icon} {volume}%",
+    "format": "{icon}\u2009{volume}%",
     "format-muted": " MUTE",
     "format-source": "",
     "format-source-muted": "",
@@ -124,15 +112,13 @@
     "on-click": "pwvucontrol",
     // "on-click-right": "easyeffects"
   },
-
   "clock": {
     "interval": 60,
     "align": 0,
     "rotate": 0,
-    "format": " {:%a %d %H:%M}",
+    "format": "  {:%Y-%m-%d %H:%M}",
     "tooltip-format": "<tt><big>{:%A, %d %B %Y}</big></tt>",
   },
-
   "custom/swaync": {
     "tooltip": true,
     "format": " {icon} ",

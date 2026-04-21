@@ -1,0 +1,166 @@
+/* ── Variables ─────────────────────────────────────────── */
+* {
+  all: unset;
+  font-size: 15px;
+  font-family: "JetBrainsMono Nerd Font";
+  transition: 200ms;
+
+  --bg-base:    #24273a;
+  --bg-mantle:  #1e2030;
+  --bg-surface: #363a4f;
+  --bg-overlay: #494d64;
+  --bg-muted:   #5b6078;
+
+  --text:       #cad3f5;
+  --text-dim:   #b8c0e0;
+  --text-faint: #a5adcb;
+
+  --accent:     #8aadf4;
+  --red:        #ed8796;
+  --red-light:  #ee99a0;
+  --pink:       #f5bde6;
+
+  --border:     inset 0 0 0 1px var(--bg-overlay);
+  --shadow:     0 0 8px 0 rgba(0,0,0,0.8);
+}
+
+/* ── Slider / Scale ────────────────────────────────────── */
+scale { margin: 0 7px; }
+
+scale trough {
+  margin: 0 1rem;
+  min-height: 8px;
+  min-width: 70px;
+}
+
+trough { background-color: var(--bg-surface); }
+trough highlight { background: var(--text); }
+
+trough slider {
+  margin: -10px;
+  background-color: var(--accent);
+  box-shadow: 0 0 2px rgba(0,0,0,0.8);
+  transition: all 0.2s ease;
+}
+trough slider:hover {
+  box-shadow: 0 0 2px rgba(0,0,0,0.8), 0 0 8px var(--accent);
+}
+
+scrollbar slider { margin: -3px; opacity: 0.8; }
+scrollbar trough { margin: 2px 0; }
+
+/* ── Notification Card ─────────────────────────────────── */
+.notification-background {
+  margin: 18px;
+  padding: 0;
+  background: var(--bg-mantle);
+  color: var(--text);
+  box-shadow: var(--shadow), var(--border);
+}
+
+.notification-background .notification { padding: 7px; }
+.notification-background .notification.critical {
+  box-shadow: inset 0 0 7px 0 var(--red);
+}
+
+.notification .notification-content { margin: 7px; }
+.notification .notification-content overlay { margin: 4px; }
+.notification > *:last-child > * { min-height: 3.4em; }
+
+.notification-content .summary { color: var(--text); }
+.notification-content .time    { color: var(--text-faint); }
+.notification-content .body    { color: var(--text-dim); }
+
+/* Close button */
+.notification-background .close-button {
+  margin: 7px;
+  padding: 4px 8px;
+  color: var(--bg-base);
+  background-color: var(--red);
+}
+.notification-background .close-button:hover  { background-color: var(--red-light); }
+.notification-background .close-button:active { background-color: var(--pink); }
+
+/* Action buttons — optimized layout */
+.notification .notification-action {
+  margin: 4px;
+  padding: 6px 12px;
+  font-size: 0.85rem;            /* was 0.2rem — now actually readable */
+  color: var(--text);
+  background-color: var(--bg-surface);
+  box-shadow: var(--border);
+}
+.notification .notification-action:hover  { background-color: var(--bg-overlay); }
+.notification .notification-action:active { background-color: var(--bg-muted); }
+
+/* Progress bars */
+.notification progress,
+.notification trough,
+.notification progressbar     { padding: 3px 0; }
+.notification.critical progress        { background-color: var(--red); }
+.notification.low progress,
+.notification.normal progress          { background-color: var(--accent); }
+
+/* ── Control Center ────────────────────────────────────── */
+.control-center {
+  padding: 14px;
+  background-color: var(--bg-base);
+  color: var(--text);
+  box-shadow: var(--shadow), inset 0 0 0 1px var(--bg-surface);
+}
+
+.control-center .notification-background {
+  margin: 4px 10px;
+  box-shadow: var(--border);
+}
+.control-center .notification-background .notification.low { opacity: 0.8; }
+
+/* Title bar clear-all button */
+.control-center .widget-title button {
+  padding: 6px 14px;
+  color: var(--text);
+  background-color: var(--bg-surface);
+  box-shadow: var(--border);
+}
+.control-center .widget-title button:hover  { background-color: var(--bg-overlay); }
+.control-center .widget-title button:active { background-color: var(--bg-muted); }
+
+/* ── DnD Toggle ────────────────────────────────────────── */
+.widget-dnd {
+  margin-top: 5px;
+  font-size: 1.1rem;
+}
+.widget-dnd > switch {
+  font-size: initial;
+  background: var(--bg-surface);
+  box-shadow: none;
+}
+.widget-dnd > switch:checked  { background: var(--accent); }
+.widget-dnd > switch slider   { background: var(--bg-overlay); }
+
+/* ── MPRIS Player ──────────────────────────────────────── */
+.widget-mpris-player {
+  background: var(--bg-surface);
+  color: #cdd6f4;
+}
+.mpris-overlay {
+  background-color: var(--bg-surface);
+  opacity: 0.9;
+  padding: 15px 10px;
+}
+.widget-mpris-album-art {
+  -gtk-icon-size: 100px;
+  margin: 0 10px;
+}
+
+/* MPRIS control buttons */
+.widget-mpris button {
+  margin: 0 5px;
+  padding: 4px 8px;
+  color: var(--text);
+}
+.widget-mpris button:hover  { background-color: var(--bg-surface); }
+.widget-mpris button:active { background-color: var(--bg-overlay); }
+
+/* ── Misc ──────────────────────────────────────────────── */
+.image { padding-right: 0.5rem; }
