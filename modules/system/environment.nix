@@ -156,6 +156,7 @@ in {
 
       # Linters
       rumdl
+      clippy
       deadnix
 
       # Test
@@ -165,7 +166,7 @@ in {
       gdb
 
       # Agent
-      llm-agents.codex
+      # llm-agents.codex
       llm-agents.opencode
     ];
   };

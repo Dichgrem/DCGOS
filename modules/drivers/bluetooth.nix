@@ -9,5 +9,7 @@ in {
     enable = true;
     powerOnBoot = false;
   };
-  services.blueman.enable = lib.mkIf Bluetooth true;
+  services.udev.extraRules = lib.mkIf Bluetooth ''
+    ACTION=="add", SUBSYSTEM=="rfkill", ATTR{type}=="bluetooth", ATTR{soft}="1"
+  '';
 }

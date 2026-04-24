@@ -18,7 +18,6 @@
     enableGitIntegration = true;
 
     options = {
-      side-by-side = true;
       line-numbers = true;
       navigate = true;
       syntax-theme = "Dracula";
@@ -29,6 +28,7 @@
 
   home.packages = with pkgs; [
     git-filter-repo
+    difftastic
     onefetch
     tig
   ];
