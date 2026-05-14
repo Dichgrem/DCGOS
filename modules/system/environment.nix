@@ -64,6 +64,8 @@ in {
       syncthing
       iw
       lsof
+      dig
+      rdap
       openssl
       iperf3
       nexttrace
@@ -167,6 +169,7 @@ in {
 
       # Agent
       # llm-agents.codex
+      ollama-vulkan
       llm-agents.opencode
     ];
   };
