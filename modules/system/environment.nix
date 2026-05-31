@@ -114,6 +114,7 @@ in {
 
       # Toolchains
       nodejs_24
+      pnpm
       bun
       maven
       cargo
@@ -163,6 +164,7 @@ in {
 
       # Test
       yaak
+      shellcheck
 
       # Debug
       gdb
