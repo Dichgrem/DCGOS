@@ -2,13 +2,15 @@
   programs.tmux = {
     enable = true;
     mouse = true;
-    prefix = "C-a";
+    prefix = "C-b";
     historyLimit = 10000;
     terminal = "tmux-256color";
 
     extraConfig = ''
       set -g xterm-keys on
       set -s extended-keys on
+      set -sg escape-time 10
+      setw -g mode-keys vi
       set -g @catppuccin_flavor "mocha"
       set -g @catppuccin_window_status_style "rounded"
       bind h select-pane -L
@@ -16,6 +18,9 @@
       bind k select-pane -U
       bind l select-pane -R
       bind y set-window-option synchronize-panes
+      bind v copy-mode
+      bind-key -T copy-mode-vi v send -X begin-selection
+      bind-key -T copy-mode-vi Enter send -X copy-selection-and-cancel
     '';
 
     plugins = with pkgs.tmuxPlugins; [

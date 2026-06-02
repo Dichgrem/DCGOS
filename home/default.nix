@@ -7,6 +7,8 @@
   inherit (import ../hosts/${hostname}/env.nix) StateVersion;
   ls = lib.filesystem.listFilesRecursive;
 in {
+  stylix.enableReleaseChecks = false;
+
   imports =
     [
       ./nvim/default.nix

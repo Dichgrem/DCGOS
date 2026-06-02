@@ -4,6 +4,8 @@
   ...
 }: {
   stylix = {
+    enableReleaseChecks = false;
+    targets.kmscon.enable = false;
     enable = true;
     base16Scheme = {
       base00 = "1e1e2e";

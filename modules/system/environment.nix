@@ -169,10 +169,13 @@ in {
       # Debug
       gdb
 
+      # SQL
+      sqlite
+
       # Agent
       # llm-agents.codex
       ollama-vulkan
-      llm-agents.opencode
+      opencode
     ];
   };
 

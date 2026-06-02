@@ -8,7 +8,7 @@
     lazyvim.inputs.nixpkgs.follows = "nixpkgs";
     lazyvim.url = "github:pfassina/lazyvim-nix";
     stylix.inputs.nixpkgs.follows = "nixpkgs";
-    stylix.url = "github:danth/stylix";
+    stylix.url = "github:nix-community/stylix";
     llm-agents.url = "github:numtide/llm-agents.nix";
   };
 
