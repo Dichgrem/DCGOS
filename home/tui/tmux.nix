@@ -1,36 +1,35 @@
 {pkgs, ...}: {
   programs.tmux = {
     enable = true;
-    mouse = true;
+    baseIndex = 1;
     prefix = "C-b";
-    historyLimit = 10000;
+    mouse = true;
+    clock24 = true;
+    keyMode = "vi";
+    newSession = true;
+    secureSocket = true;
+    historyLimit = 50000;
     terminal = "tmux-256color";
+    customPaneNavigationAndResize = true;
 
     extraConfig = ''
       set -g xterm-keys on
       set -s extended-keys on
       set -sg escape-time 10
-      setw -g mode-keys vi
       set -g @catppuccin_flavor "mocha"
       set -g @catppuccin_window_status_style "rounded"
-      bind h select-pane -L
-      bind j select-pane -D
-      bind k select-pane -U
-      bind l select-pane -R
       bind y set-window-option synchronize-panes
       bind v copy-mode
       bind-key -T copy-mode-vi v send -X begin-selection
       bind-key -T copy-mode-vi Enter send -X copy-selection-and-cancel
     '';
-
     plugins = with pkgs.tmuxPlugins; [
       sensible
       yank
       resurrect
       continuum
-      catppuccin
       {
-        plugin = pkgs.tmuxPlugins.catppuccin;
+        plugin = catppuccin;
         extraConfig = ''
           set -g status-left-length 100
           set -g status-right-length 100

@@ -173,7 +173,8 @@ in {
       sqlite
 
       # Agent
-      # llm-agents.codex
+      codex
+      llm-agents.reasonix
       ollama-vulkan
       opencode
     ];
