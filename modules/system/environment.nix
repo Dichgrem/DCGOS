@@ -161,6 +161,7 @@ in {
       rumdl
       clippy
       deadnix
+      golangci-lint
 
       # Test
       yaak
