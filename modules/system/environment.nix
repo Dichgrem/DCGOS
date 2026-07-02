@@ -75,8 +75,8 @@ in {
       xxd
       file
       tree
+      scrcpy
       binwalk
-      qtscrcpy
       android-tools
       payload-dumper-go
 
@@ -101,6 +101,8 @@ in {
       age
       sops
       smartmontools
+      witr
+      subversion
 
       # Languages
       go
@@ -111,6 +113,7 @@ in {
       jdk17
       jdk21
       python312
+      dotnet-sdk
 
       # Toolchains
       nodejs_24
@@ -153,6 +156,7 @@ in {
       alejandra
       ktlint
       google-java-format
+      csharpier
 
       # Highlight
       tree-sitter

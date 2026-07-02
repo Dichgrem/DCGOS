@@ -19,6 +19,7 @@
         dart.enable = true;
         kotlin.enable = true;
         nix.enable = true;
+        dotnet.enable = true;
       };
     };
   };
