@@ -2,46 +2,16 @@
   xdg = {
     enable = true;
     mimeApps = let
-      archiver-extract = ["peazip-extract.desktop"];
-      archiver-useless-options = [
-        "peazip-extract-desktop.desktop"
-        "peazip-extract-documents.desktop"
-        "peazip-extract-downloads.desktop"
-        "peazip-extract-here.desktop"
-      ];
       browser = ["firefox.desktop"];
       editor = ["dev.zed.Zed.desktop"];
       filemanager = ["nemo.desktop"];
       image-viewer = ["org.gnome.Loupe.desktop"];
       media-player = ["vlc.desktop"];
     in {
-      associations = {
-        added = {
-          "application/x-directory" = ["peazip-add-to-archive.desktop"];
-          "inode/directory" = ["peazip-add-to-archive.desktop"];
-        };
-        removed = {
-          "application/iso" = archiver-useless-options;
-          "application/x-7z-compressed" = archiver-useless-options;
-          "application/x-ace-compressed" = archiver-useless-options;
-          "application/x-bzip2" = archiver-useless-options;
-          "application/x-gzip" = archiver-useless-options;
-          "application/x-rar-compressed" = archiver-useless-options;
-          "application/x-tar" = archiver-useless-options;
-          "application/zip" = archiver-useless-options;
-        };
-      };
       enable = true;
-      defaultApplications = {
-        "application/iso" = archiver-extract;
-        "application/zip" = archiver-extract;
-        "application/x-7z-compressed" = archiver-extract;
-        "application/x-ace-compressed" = archiver-extract;
-        "application/x-bzip2" = archiver-extract;
-        "application/x-gzip" = archiver-extract;
-        "application/x-rar-compressed" = archiver-extract;
-        "application/x-tar" = archiver-extract;
 
+      defaultApplications = {
+        # Browser
         "application/json" = browser;
         "application/pdf" = browser;
         "application/rdf+xml" = browser;
@@ -59,14 +29,13 @@
         "x-scheme-handler/http" = browser;
         "x-scheme-handler/https" = browser;
         "x-scheme-handler/unknown" = browser;
-
+        # Editor
         "application/x-wine-extension-ini" = editor;
         "text/plain" = editor;
-
+        # File manager
         "x-scheme-handler/about" = filemanager;
         "x-scheme-handler/ftp" = filemanager;
-
-        "image/*" = image-viewer;
+        # Images
         "image/avif" = image-viewer;
         "image/bmp" = image-viewer;
         "image/gif" = image-viewer;
@@ -76,21 +45,26 @@
         "image/svg+xml" = image-viewer;
         "image/tiff" = image-viewer;
         "image/webp" = image-viewer;
+        # Media
         "audio/*" = media-player;
         "video/*" = media-player;
-
+        # Custom URI schemes
         "x-scheme-handler/mpv" = ["mpv.desktop"];
-        "x-scheme-handler/tg" = ["io.github.kukuruzka165.materialgram.desktop"];
+        "x-scheme-handler/tg" = [
+          "io.github.kukuruzka165.materialgram.desktop"
+        ];
       };
     };
+
     portal = {
+      enable = true;
       config = {
         common = {
           "org.freedesktop.impl.portal.FileChooser" = "gtk";
         };
       };
-      enable = true;
     };
+
     userDirs = {
       enable = true;
       createDirectories = false;

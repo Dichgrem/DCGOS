@@ -35,12 +35,13 @@ in {
 
     systemPackages = with pkgs; [
       # Archive
-      gnutar
-      p7zip
-      unzipNLS
       xz
       zip
+      _7zz
       zstd
+      unzipNLS
+      gnutar
+      libarchive
 
       # Greeter with ddm
       tuigreet
@@ -178,10 +179,12 @@ in {
       sqlite
 
       # Agent
-      codex
+      ctx7
+      abtop
       llm-agents.reasonix
-      ollama-vulkan
-      opencode
+      llm-agents.opencode
+      llm-agents.rtk
+      llm-agents.codegraph
     ];
   };
 

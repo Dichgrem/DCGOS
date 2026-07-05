@@ -31,6 +31,7 @@ in {
       };
     };
     homeDirectory = "/home/${username}";
+    pointerCursor.enable = true;
     stateVersion = StateVersion;
     username = "${username}";
   };

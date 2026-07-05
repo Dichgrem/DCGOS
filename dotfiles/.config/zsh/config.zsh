@@ -24,6 +24,7 @@ alias cat='bat --paging=never'
 alias grep='grep --color=auto'
 alias ..='cd ..'
 alias ...='cd ../..'
+alias 7z='7zz'
 
 # === Autosuggestions ===
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=8'
