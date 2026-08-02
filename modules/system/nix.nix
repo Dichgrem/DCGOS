@@ -42,6 +42,6 @@ with lib; {
     };
   };
   nixpkgs = {
-    config.allowUnfree = true;
+    config.allowUnfree = false;
   };
 }

@@ -181,7 +181,6 @@ in {
       # Agent
       ctx7
       abtop
-      llm-agents.reasonix
       llm-agents.opencode
       llm-agents.rtk
       llm-agents.codegraph
