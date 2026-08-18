@@ -13,7 +13,7 @@
     customPaneNavigationAndResize = true;
 
     extraConfig = ''
-      set -g xterm-keys on
+      set -g extended-keys-format csi-u
       set -s extended-keys on
       set -sg escape-time 10
       set -g @catppuccin_flavor "mocha"
