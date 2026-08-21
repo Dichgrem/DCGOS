@@ -28,7 +28,7 @@
   TimeZone = "Asia/Singapore";
 
   # -------------------- Display --------------------
-  WM = "Hyprland"; ## Options: "Hyprland" | "niri" | "sway"
+  WM = "niri"; ## Options: "Hyprland" | "niri" | "sway"
 
   # See: https://wiki.hyprland.org/Configuring/XWayland/#hidpi-xwayland
   # See: https://github.com/swaywm/sway/wiki#hidpi

@@ -169,7 +169,6 @@ in {
       golangci-lint
 
       # Test
-      yaak
       shellcheck
 
       # Debug
@@ -180,7 +179,6 @@ in {
 
       # Agent
       ctx7
-      abtop
       llm-agents.opencode
       llm-agents.rtk
       llm-agents.codegraph

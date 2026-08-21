@@ -12,19 +12,12 @@ with lib; {
       dates = "weekly";
       options = "--delete-older-than 7d";
     };
-    optimise = {
-      automatic = true;
-      dates = ["weekly"];
-    };
     # package = pkgs.lix; # use lix instead of nix would cause clan-cli error
     registry.nixpkgs.flake = inputs.nixpkgs;
     settings = {
       auto-optimise-store = true;
-      builders-use-substitutes = true;
       experimental-features = ["nix-command" "flakes"];
       connect-timeout = 5;
-      gc-keep-derivations = false;
-      gc-keep-outputs = false;
       keep-going = true;
       log-lines = 25;
       nix-path = mkForce "nixpkgs=/etc/nix/inputs/nixpkgs";

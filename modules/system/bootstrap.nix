@@ -18,13 +18,6 @@ in
   with lib; {
     boot = {
       blacklistedKernelModules = [
-        "iTCO_wdt"
-        "iTCO_vendor_support"
-        "intel_pmc_bxt"
-        "mei"
-        "mei_hdcp"
-        "mei_me"
-        "mei_pxp"
         "pstore"
         "sp5100_tco"
         "wdat_wdt"
@@ -36,7 +29,6 @@ in
       initrd = {
         compressor = "zstd";
         compressorArgs = ["-T0" "-19" "--long"];
-        systemd.enable = true;
         verbose = false;
       };
       kernel.sysctl = {
@@ -45,7 +37,7 @@ in
       };
       kernelModules = ["v4l2loopback"]; # v4l2loopback is for OBS Virtual Cam Support
       kernelPackages = pkgs.${KernelPackages};
-      kernelParams = ["8250.nr_uarts=0" "8250.skip_txen_test=1" "i8042.nopnp" "amd_pstate=active" "audit=0" "console=tty1" "erst_disable" "nmi_watchdog=0" "noatime" "nowatchdog"];
+      kernelParams = ["8250.nr_uarts=0" "8250.skip_txen_test=1" "i8042.nopnp" "amd_pstate=active" "audit=0" "console=tty1" "erst_disable" "nowatchdog"];
       loader = {
         grub = mkIf (strings.hasInfix "grub" BootLoader) {
           configurationLimit = 50;
@@ -75,6 +67,10 @@ in
       tmp.cleanOnBoot = true;
     };
 
+    fileSystems."/" = {
+      options = ["noatime"];
+    };
+
     console = {
       earlySetup = true;
       keyMap = KeyboardLayout;
@@ -100,7 +96,6 @@ in
       hostName = hostname;
       networkmanager = {
         enable = true;
-        dns = "default";
       };
     };
 
