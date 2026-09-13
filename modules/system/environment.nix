@@ -77,7 +77,6 @@ in {
       file
       tree
       scrcpy
-      binwalk
       android-tools
       payload-dumper-go
 
