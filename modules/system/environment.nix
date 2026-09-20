@@ -179,7 +179,6 @@ in {
       # Agent
       ctx7
       llm-agents.opencode
-      llm-agents.rtk
       llm-agents.codegraph
     ];
   };
