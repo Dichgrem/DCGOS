@@ -13,7 +13,6 @@ in {
   home.file.".pi/agent/settings.json" = {
     text = builtins.toJSON {
       packages = [
-        "npm:pi-mcp-adapter"
         "npm:@narumitw/pi-lsp"
         "npm:@narumitw/pi-plan-mode"
         "npm:@narumitw/pi-subagents"

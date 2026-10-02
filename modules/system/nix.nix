@@ -20,7 +20,7 @@ with lib; {
       connect-timeout = 5;
       keep-going = true;
       log-lines = 25;
-      nix-path = mkForce "nixpkgs=/etc/nix/inputs/nixpkgs";
+      nix-path = mkForce [ "nixpkgs=/etc/nix/inputs/nixpkgs" ];
       substituters = [
         # "https://cache.garnix.io" # See https://github.com/daeuniverse/flake.nix
         "https://cache.nixos.org" # See https://nixos.wiki/wiki/Binary_Cache
