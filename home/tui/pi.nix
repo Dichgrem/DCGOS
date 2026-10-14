@@ -21,6 +21,8 @@ in {
         "npm:pi-btw"
         "npm:pi-grilling-skill"
       ];
+      defaultProvider = "deepseek";
+      defaultModel = "deepseek-flash";
     };
   };
 }

@@ -43,6 +43,7 @@
       kde.enable = false;
       mpv.enable = false;
       nixvim.enable = false;
+      rofi.enable = false;
       sway.enable = false;
       waybar.enable = false;
       yazi.enable = false;
