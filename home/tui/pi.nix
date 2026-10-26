@@ -23,6 +23,12 @@ in {
       ];
       defaultProvider = "deepseek";
       defaultModel = "deepseek-flash";
+      defaultTools = [
+        "+grep"
+        "+find"
+        "+ls"
+        "+codemode"
+      ];
     };
   };
 }

@@ -29,7 +29,6 @@ in
       initrd = {
         compressor = "zstd";
         compressorArgs = ["-T0" "-19" "--long"];
-        verbose = false;
       };
       kernel.sysctl = {
         "kernel.core_pattern" = "|/bin/false"; # Disable automatic core dumps
